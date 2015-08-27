@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jsonP</title>
+	<style>
+	</style>
+	<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+	<script>
+		// $.ajax({
+		// 	type : "post",
+  //           url : "b.txt",
+		// 	success :function(a){
+		// 		console.log(a)
+		// 	},
+		// 	error:function(){
+		// 		console.log("error")
+		// 	}
+
+		// })
+
+	</script>
+
+	<script>
+	// function ajax(options){
+	// 	var type = options.type || "POST";
+	// 	var url = options.url;
+	// 	var succeed = options.succeed
+	// 	if (window.ActiveXObject) { 
+	// 		var oAjax = new ActiveXObject("Microsoft.XMLHTTP"); 
+	// 	} else if (window.XMLHttpRequest) { 
+	// 		var oAjax =new XMLHttpRequest(); 
+	// 	}
+	// 	oAjax.open(type,url); 
+	// 	oAjax.send(); 
+	// 	oAjax.onreadystatechange = function(){
+	// 		if(oAjax.readyState==4&&oAjax.status==200){
+	// 			succeed(oAjax.responseText)
+	// 		}			
+	// 	}
+	// }
+
+	// function choose(value,db){
+	// 	var bol=true;
+	// 	for(name in db){
+	// 		if(value==name){
+	// 			console.log(db[name])
+	// 			return;
+	// 		} else {
+	// 			bol=false
+	// 		}
+	// 	}
+	// 	if(!bol){
+	// 		console.log("暂时没有您查询的信息")
+	// 	}
+	// }
+
+	
+		
+	$(function(){
+		// $("#text").keyup(function(){
+		// 	var val = this.value
+		// 	ajax({url:"a.txt",succeed:function(a){
+		// 		var $a =  $.parseJSON(a);
+		// 		// console.log($a.subway)
+		// 		choose(val,$a.subway)
+		// 	}})
+
+		// })
+
+		$("label").click(function () {
+			if($(this).children().val() != "")return false;
+			if($(this).children().attr("id") != "text1"){
+				console.log($(this).prev().html())
+			}
+			var time=new Date();
+			var t=time.getHours()+":"+time.getMinutes()+":"+time.getSeconds()
+			console.log($(this).children().val(t))
+			return false;
+		})
+	})
+
+</script>
+
+</head>
+<body>
+	<!-- <input id="text" type="text"> -->
+	<div>
+		<label>出门<input id="text1" type="text"></label><br>
+		耗时<p>1</p>
+		<label>到地铁<input type="text"></label><br>
+		耗时<p></p>
+		<label>上地铁<input type="text"></label><br>
+		耗时<p></p>
+		<label>下地铁<input type="text"></label><br>
+		耗时<p></p>
+		<label>到地铁<input type="text"></label><br>
+		耗时<p></p>
+		<label>上地铁<input type="text"></label><br>
+		耗时<p></p>
+		<label>下地铁<input type="text"></label><br>
+		耗时<p></p>
+		<label for="a1">到公司<input type="text"></label><br>
+		耗时<p></p>
+
+	</div>
+</body>
+</html>
