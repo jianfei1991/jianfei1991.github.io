@@ -5,7 +5,366 @@
 	<title>meta</title>
 	<meta content="width=320,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport"/>
 </head>
+<style>
+    /**
+    *by Du Jingjie
+    */
+    /*===============================reset======================================*/
+    article,
+    aside,
+    details,
+    figcaption,
+    figure,
+    footer,
+    header,
+    hgroup,
+    main,
+    nav,
+    section,
+    summary {
+        display: block;
+    }
+    audio,
+    canvas,
+    video {
+        display:inline-block;
+        *display:inline;
+        *zoom:1;
+    }
+    *{padding:0;margin:0;}
+    ul,li{list-style: none;}
+    /*===============================tool======================================*/
+    .hidden { display: none; }
+    .show { display: block; }
+
+
+    .pull-right { float: right; }
+    .pull-left { float: left; }
+    .clearfix:after {
+        content: ".";
+        display: block;
+        clear: both;
+        height: 0;
+        visibility: hidden;
+    }
+    .clearfix { *zoom: 1; }
+    .plrs {
+        padding-right: 30px;
+        padding-left: 30px;
+    }
+    .bg-gray { background-color: #f6f5f5; }
+    .white { color: #fff; }
+    .red { color: #ec4949; }
+
+    .mr30 { margin-right: 30px; }
+    .mb34 { margin-bottom: 34px; }
+
+    /*===============================sprite======================================*/
+
+    .sprite {display:inline-block; margin-right: 10px;vertical-align: middle;overflow:hidden; background-repeat: no-repeat;background-image:url('http://i3.testing.yongche.org/u/images/201507/3587026551.png?1440707040');}
+
+    .carcard {width:38px; height:37px; background-position: -171px -2px}
+    .heart {width:26px; height:24px; background-position: -291px -32px}
+    .location {width:26px; height:28px; background-position: -291px -2px}
+    .logo {width:167px; height:52px;margin-bottom: 37px; background-position: -2px -2px}
+    .money {width:38px; height:36px; background-position: -211px -2px}
+    .sit {width:38px; height:36px; background-position: -251px -2px}
+
+
+
+    /*===============================page======================================*/
+    html {
+        font-size: 62.5%;
+    }
+
+    body {
+        height: 100%;
+        text-align: left;
+        font-size: 2.4rem;
+        font-family: "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+        color: #000;
+        background-color: #fff;
+    }
+
+    article> section {
+        overflow: hidden;
+    }
+
+    .descrip-container {
+        padding-top: 40px;
+        padding-bottom: 48px;
+    }
+
+    .driver-container {
+        padding-top: 68px;
+        padding-bottom: 40px;
+        text-align: center;
+        color: #c7c9cd;
+        background-color: #132540;
+    }
+
+    .driver-info { margin-bottom: 190px; }
+
+    .driver-info>div {
+        margin-left: 70px;
+    }
+
+    .driver-info .num {
+        font-size: 5rem;
+    }
+
+    .person-info {
+        height: 135px;
+        line-height: 135px;
+    }
+
+    .person-info .avatar {
+        width: 135px;
+        height: 135px;
+        border-radius: 50%;
+        margin-right: 22px;
+        box-shadow: 0 0 200px 60px #22436F;
+    }
+
+    .person-detail{
+        display: inline-block;
+        text-align: left;
+        line-height: normal;
+        vertical-align: middle;
+    }
+
+    .person-detail .name {
+        margin-right: 26px;
+        font-size: 4rem;
+    }
+
+    .person-detail .collect {
+        display: inline-block;
+        height: 4rem;
+        padding-left: 1.8rem;
+        padding-right: 1.8rem;
+        line-height: 4rem;
+        vertical-align: top;
+        color: #000;
+        background-color: #b9bec6;
+    }
+
+    .detail-show {
+        width: 410px;
+        white-space:nowrap;
+        overflow:hidden;
+        text-overflow:ellipsis;
+
+
+    }
+    .detail-show > span {
+        padding-left: 10px;
+        padding-right: 10px;
+        color: #acafb5;
+        border-right: 1px solid #acafb5;
+
+    }
+
+    .detail-show > span:first-child { padding-left: 0; }
+    .detail-show > span:last-child { border-right: none; }
+
+    .cartype-container  {
+        padding-top: 52px;
+        padding-bottom: 52px;
+    }
+
+    .cartype {
+        font-size: 4rem;
+        margin-bottom: 40px;
+    }
+
+    .carinfo-list {
+        margin-top: 40px;
+    }
+    .carinfo-list li {
+        height: 37px;
+        line-height: 37px;
+        margin-bottom: 16px;
+    }
+
+    .carphoto {
+        width: 485px;
+        margin: 0 auto;
+    }
+    .carphoto img {
+        width: 100%;
+        height: auto;
+    }
+
+    .facility {
+        padding-top: 55px;
+        padding-bottom: 50px;
+    }
+
+    .facility > h1 {
+        margin-bottom: 43px;
+        font-size: 3.5rem;
+    }
+
+    .facility-list li {
+        float: left;
+        width: 25%;
+        margin: 0 auto;
+        margin-bottom: 40px;
+        text-align: center;
+        color: #acafb5;
+    }
+
+    .facility-list li>div {
+        width: 60px;
+        height: 60px;
+        padding: 20px;
+        margin: 0 auto 13px;
+        border-radius: 50%;
+    }
+    .facility-list li>div>img {
+        width: 100%;
+        height: 100%;
+
+    }
+
+    .comment {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .comment h1 {
+        margin-bottom: 45px;
+        font-size: 3.5rem;
+    }
+
+    .comment-list {
+        max-height: 234px;
+        overflow: hidden;
+    }
+
+    .comment-list li {
+        display: inline-block;
+        float: left;
+        height: 60px;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: 20px;
+        margin-bottom: 20px;
+        line-height: 60px;
+        color: #ec4949;
+        border: 1px solid #ec4949;
+    }
+
+    .comment-list li>i { margin-left: 10px; }
+
+    .location-list li {
+        color: #36434e;
+        border: 1px solid #36434e;
+    }
+
+    .collect-driver {
+        padding: 100px 75px 70px 75px;
+    }
+
+    .input-card {
+        padding: 28px 22px 33px 22px;
+        margin-top: 53px;
+        margin-bottom: 57px;
+        border: 1px solid #d2d2d2;
+    }
+
+    .phonenumber {
+        display: block;
+        box-sizing: border-box;
+        height: 58px;
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin: 0 auto;
+        line-height: 58px;
+        border: 1px solid #bfbfbf;
+        border-radius: 3px;
+        text-align: center;
+    }
+
+    .btn {
+        display: block;
+        width: 100%;
+        height: 60px;
+        margin-top: 24px;
+        line-height: 60px;
+        color: #fff;
+        background-color: #ec4949;
+        border: none;
+        border-radius: 4px;
+    }
+
+    .weixin-share {
+        position: relative;
+        padding-top: 60px;
+        padding-bottom: 85px;
+        border-top: 1px solid #b5b5b5;
+        overflow: visible;
+    }
+
+    .weixin-share > h1 {
+        position: absolute;
+        top: -1.3rem;
+        right: 0;
+        left: 0;
+        z-index: 100;
+        width: 28rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        margin: 0 auto;
+        text-align: center;
+        font-size: 2.4rem;
+        background-color: #fff;
+
+    }
+
+    .friend-list li {
+        float: left;
+        width: 80px;
+        height: 80px;
+        margin-right: 16px;
+        border-radius: 50%;
+    }
+
+    .friend-list li >img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+    }
+
+    .loading_img{
+        display: none;
+        position: absolute;
+        left:50%;
+        bottom:200px;
+        margin-left: -32px;
+        margin-top:-32px;
+    }
+    #sub_collect{
+        -webkit-overflow-scrolling: touch;
+        border:solid red 1px;
+    }
+    </style>
 <body>
+<section class="cartype-container plrs">
+        <span class="cartype mr30 ng-binding" ng-bind="data.car_type">经济</span>
+
+        <span class="cartype ng-binding" ng-bind="data.brand">宝马3系</span>
+        <ul class="carinfo-list">
+            <li><i class="sprite money"></i><span ng-bind="data.fee_per_minute" class="ng-binding">1.5</span><span>元/分钟+</span><span ng-bind="data.fee_per_kilometer" class="ng-binding">1</span><span>元/公里</span></li>
+            <li><i class="sprite sit"></i><span>可乘<i ng-bind="data.seat_num" class="ng-binding">4</i>人</span></li>
+            <li><i class="sprite carcard"></i><span ng-bind="data.vehicle_number" class="ng-binding">京1**342</span></li>
+        </ul>
+        <div class="carphoto">
+            <img src="http://i3.testing.yongche.org/media/g1/M00/01/21/CgAL4VXRnhOABwLXAAGNvnutbpQ305.png?1440707040" alt="车辆图片">
+        </div>
+    </section>
 	
 </body>
 </html>
