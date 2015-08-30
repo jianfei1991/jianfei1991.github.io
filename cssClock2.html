@@ -61,30 +61,30 @@ window.onload=function(){
 	clock();
 	setInterval(clock,30);
 	
-	drag(oBox);
+	// drag(oBox);
 	//拖拽
-	function drag(oDiv){
-		oDiv.onmousedown=function(ev){
-			var oEvent=ev || event;
+	// function drag(oDiv){
+	// 	oDiv.onmousedown=function(ev){
+	// 		var oEvent=ev || event;
 			
-			var disX=oEvent.clientX-oDiv.offsetLeft;
-			var disY=oEvent.clientY-oDiv.offsetTop;
+	// 		var disX=oEvent.clientX-oDiv.offsetLeft;
+	// 		var disY=oEvent.clientY-oDiv.offsetTop;
 			
-			document.onmousemove=function(ev){
-				var oEvent=ev || event;
+	// 		document.onmousemove=function(ev){
+	// 			var oEvent=ev || event;
 				
-				oDiv.style.left=oEvent.clientX-disX+'px';
-				oDiv.style.top=oEvent.clientY-disY+'px';	
-			}
-			document.onmouseup=function(){
-				document.onmousemove=null;
-				document.onmouseup=null;	
-				oDiv.releaseCapture && oDiv.releaseCapture();
-			}
-			oDiv.setCapture && oDiv.setCapture();
-			return false;	
-		}
-	}
+	// 			oDiv.style.left=oEvent.clientX-disX+'px';
+	// 			oDiv.style.top=oEvent.clientY-disY+'px';	
+	// 		}
+	// 		document.onmouseup=function(){
+	// 			document.onmousemove=null;
+	// 			document.onmouseup=null;	
+	// 			oDiv.releaseCapture && oDiv.releaseCapture();
+	// 		}
+	// 		oDiv.setCapture && oDiv.setCapture();
+	// 		return false;	
+	// 	}
+	// }
 };
 </script>
 </head>
