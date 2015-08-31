@@ -9,9 +9,14 @@ a{margin:10px;}
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
 <script>
+$(document).ready(function(){ 
+	$(".top").load("top.html"); 
+	// $(".footer").load("footer.html"); 
+});
 </script>
 </head>
 <body>
+<div class="top"></div>
 <div class="header">
 <a href="index.html">主页</a>
 <a href="jsonp.html">jsonp</a>
@@ -23,7 +28,7 @@ a{margin:10px;}
 <a href=""></a>
 <a href=""></a>
 <a href=""></a>
-
+<div class="footer"></div>
 </div>
 
 
