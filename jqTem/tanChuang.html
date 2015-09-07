@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>弹窗</title>
+	<style>
+		body{position: relative;}
+		label{display: block;}
+		#login{
+			position: absolute;
+			width: 300px;
+			height: 300px;
+			border:solid 1px #ccc;
+		}
+		.loginTitle{text-align: right;}
+		.closeLogin{padding: 5px; margin: 5px;display: inline-block;}
+		.closeLogin{cursor: pointer;}
+	</style>
+<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+<script>
+
+	$(function(){
+		function loginWindowCenter(){
+			$login.css({
+				left: $(window).width()/2-$login.outerWidth()/2,
+				top: $(window).height()/2-$login.outerHeight()/2 + $(window).scrollTop()
+			});
+		}
+		var $login = $('<div id="login"><div class="loginTitle"><span class="closeLogin">X</span></div><label for="userName">用户名<input type="text" id="userName" placeholder="请输入用户名"></label><label for="password">用户名<input type="text" id="password" placeholder="请输入密码"></label><input type="button" value="确认登录" /></div>')
+		$('body').append($login)
+		
+		loginWindowCenter();
+		$(window).on('resize scroll', function() {
+			loginWindowCenter();
+		});
+		$(".closeLogin").click(function(){
+			$("#login").hide('slow/400/fast', function() {
+				
+			});
+		});
+	})
+</script>
+</head>
+<body style="height:2000px;">
+	<input id="btn" type="button" value="登录">
+	<!-- <div id="login">
+		<div class="loginTitle">
+			<span class="closeLogin">X</span>
+		</div>
+		<label for="userName">用户名<input type="text" id="userName" placeholder="请输入用户名"></label>
+		<label for="password">用户名<input type="text" id="password" placeholder="请输入密码"></label>
+	</div> -->
+</body>
+</html>

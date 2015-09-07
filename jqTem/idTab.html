@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>选项卡</title>
+	<style>
+		*{margin:0;padding:0;list-style: none;}
+		ul.tabs li{height: 200px;width: 200px;border:solid #ccc 1px;display: none;}
+		ul.tabs li.active{display: block;}
+	</style>
+	<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+	<script>
+	$(function(){
+		$("#div1").find('input').click(function(){
+			$("#div1").find('input').attr('class', '');
+			$("#div1>ul.tabs").find('li').css('display', 'none');
+			$(this).attr('class', 'active');
+			$("#div1>ul.tabs").find('li').eq($(this).index()).css('display', 'block');
+		});
+	})
+	</script>
+</head>
+<body>
+	<div id="div1">
+		<input type="button" value="1">
+		<input type="button" value="2">
+		<input type="button" value="3">
+		<ul class="tabs">
+			<li class="active">1</li>
+			<li>2</li>
+			<li>3</li>
+		</ul>
+	</div>
+</body>
+</html>
