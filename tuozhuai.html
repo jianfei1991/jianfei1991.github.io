@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>拖拽</title>
+	<style>
+		*{padding:0;margin:0;}
+		div{height: 200px;width: 200px;background: red; position: absolute;left:20px;top:30px;}
+	}
+	</style>
+	<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+	<script>
+	// $(function(){
+	// 	var disX = 0;
+	// 	var disY = 0;
+	// 	$('div').mousedown(function(ev){
+
+	// 		disX = ev.pageX - $(this).offset().left;
+	// 		disY = ev.pageY - $(this).offset().top;
+	// 		document.title = ev.pageX+":"+ev.pageY;
+	// 		$(document).mousemove(function(ev){
+	// 			$('div').css('left', ev.pageX - disX);
+	// 			$('div').css('top', ev.pageY - disY);
+	// 		});
+
+	// 		$(document).mouseup(function(){
+	// 			$(document).off()
+	// 		});
+	// 		return false;
+	// 	});
+	// })
+
+	$(function(){
+		var disX,disY;
+		$("div").mousedown(function(ev){
+			disX = ev.pageX - $("div").offset().left;
+			disY = ev.pageY - $("div").offset().top;
+
+			$(document).mousemove(function(ev){
+				$("div").css('left', ev.pageX - disX);
+				$("div").css('top', ev.pageY - disY);
+			})
+			$(document).mouseup(function(){
+				$(document).off()
+			})
+			return false;
+		})
+	});
+	</script>
+</head>
+<body>
+<p style="border:solid red 1px; margin:20px;position:relative;width:500px;height:500px;">
+<p style="border:solid #ccc 1px; margin:20px;position:absolute;left:0;top:0;width:400px;height:400px;">
+	<div></div>
+</p>
+</p>
+</body>
+</html>
