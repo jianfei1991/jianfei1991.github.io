@@ -6,11 +6,11 @@
 </head>
 <script>
 	if(navigator.userAgent.indexOf("Weibo") != -1){
-		document.write("微博")
+		document.write("微博"+navigator.userAgent)
 	} else if (navigator.userAgent.indexOf("MicroMessager") != -1){
 		document.write("微信"+navigator.userAgent)
 	} else {
-		document.write("其他")
+		document.write("其他"+navigator.userAgent)
 	}
 </script>
 <body>
