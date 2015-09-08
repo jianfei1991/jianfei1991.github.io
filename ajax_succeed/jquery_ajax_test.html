@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery_ajax_test</title>
+	<script src="http://apps.bdimg.com/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script>
+	$(function(){
+		$.ajax({
+			url: 'a.txt',
+			type: 'POST',
+			dataType: 'json',
+			data: {param1: 'value1'},
+		})
+		.done(function(a) {
+			console.log("success");
+			alert(a.a)
+		})
+		.fail(function() {
+			console.log("error");
+		})
+		.always(function() {
+			console.log("complete");
+		});
+		
+	})
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
