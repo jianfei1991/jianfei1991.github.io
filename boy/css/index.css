@@ -120,6 +120,3 @@ footer{ background:#032e13; height:56px; line-height:56px;}
 footer p{ width:1000px; margin:auto; text-align:right;color:#559664 }
 footer p a{color:#559664}
 footer p a:hover{ text-decoration:underline}
-/*topnav*/
-.topnav{ line-height:50px; height:50px; color:#000; text-align:center; background:#FFF; position:fixed; width:100%; top:0; z-index:999; box-shadow:#333 0px 2px 2px}
-.topnav a{ color:#000; font-weight:bold; margin:0 5px}
