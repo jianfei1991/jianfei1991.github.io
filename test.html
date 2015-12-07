@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=no">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta content="yes" name=" apple-mobile-web-app-capable" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <title></title>
+
+    <script src="<{asset:u/js/201503/zepto.min.js}>"></script>
+    <script type= "text/javascript" >
+        // alert(navigator.userAgent)
+        // alert(window.screen.height)
+        if (/Android (\d+\.\d+)/.test(navigator.userAgent)){//安卓
+            var  version = parseFloat(RegExp.$1);
+            if (version>2.3){
+                var  phoneScale = parseInt(window.screen.width)/750;
+                document.write( '<meta name="viewport" content="width=750, minimum-scale = ' + phoneScale + ', maximum-scale = ' + phoneScale + ', target-densitydpi=device-dpi">' );
+            } else {
+                document.write( '<meta name="viewport" content="width=750, target-densitydpi=device-dpi">' );
+            }
+        } else {
+            document.write( '<meta name="viewport" content="width=750, user-scalable=no, target-densitydpi=device-dpi">' );
+        }
+    </script>
+    <{block:zyx/hd.tpl}>
+    <!-- 提示，安装时请将GA代码和百度统计代码同时安装，代码和规则如下：
+    H5端：
+    安装方法：</head>标签前 -->
+    <!-- GA: -->
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-18761483-4', 'auto');  ga('send', 'pageview');
+    </script>
+    <!-- 百度统计： -->
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?24b50d3a9a73a0efd25feab8f04d313f";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    <style>
+
+        .sel_btn{box-shadow: 10px 10px 5px green; -webkit-transition: all 1.2s linear;  -webkit-animation: sel-move 0.7s infinite ease;}
+        #finalBtn{ -webkit-transition: all 1.2s linear;  -webkit-animation: sel-move 0.7s infinite ease;}
+        @-webkit-keyframes sel-move { 0% {
+            box-shadow: 1px 1px 2px green;
+        } 50% {
+              box-shadow: 1px 1px 15px green;
+          } 100% {
+                box-shadow: 1px 1px 2px green;
+            }
+        }
+        .share_img{position: fixed;left: 0;top: 0;z-index: 9999;width: 100%;height: 100%;display: none;}
+        .share_img img{width: 100%;}
+        *{padding: 0; margin:0;list-style: none;}
+        body{height:100%;background: white;}
+        .clearfix:after {visibility: hidden;display: block;font-size: 0;content: " ";clear: both;height: 0;}
+
+        html,body{width: 100%;height: 100%;}
+        #loading { width: 100%; height: 100%; position: fixed; top: 0; left: 0; background-color: #000; opacity: 0.8; display: -webkit-box; -webkit-box-align: center; -webkit-box-pack: center; z-index: 10000; }
+        #loading .icon { width: 32px; height: 32px; }
+        #wrap { width: 100%; overflow: hidden; position: relative; height: 100%; }
+        #scrollContent { width: 100%; height: 100%; top: 0; left: 0; -webkit-transition: all 1.2s linear; }
+        #scrollContent .content { width: 100%; height: 100%; overflow: hidden; position: relative; float: left; }
+        .hint2 { height: 32px; width: 67px; z-index: 99; position: absolute; left: 50%; margin-left: -16px; opacity: 1; bottom: 15px; -webkit-animation: hint-move 0.7s infinite ease; background: url(<{asset:u/images/201511/2213493820.png}>) no-repeat center bottom; background-size: 100% auto; }
+        @-webkit-keyframes hint-move { 0% {
+            opacity: 0;bottom: 20px;
+        }  70% {
+               opacity: 1;bottom: 15px;
+           } 100% {
+                 opacity: 0;bottom: 10px;
+             }
+        }
+        :focus{outline: 0};
+        section{width: 750px; height: 1182px; position: relative;}
+        section.c0{ background: url(<{asset:media/g1/M02/06/16/rBEARFY8V6-IUimbAAEMgi7h1j0AACiOwHoZgkAAQya622.jpg}>) no-repeat;}
+        section.c1{ background: url(<{asset:media/g1/M01/06/16/rBEAQ1Y8V6-ISAXCAAEf6d4b44kAACiPQHT1h4AASAB699.jpg}>) no-repeat;}
+        section.c2{ background:  url(<{asset:u/images/201511/312878037.jpeg}>) no-repeat;}
+        section.c3,.c4,.c5,.c6,.c7{ background: url(<{asset:u/images/201511/2846716985.jpeg}>) no-repeat;}
+        section.c8,section.c9{ background: url(<{asset:media/g1/M03/06/15/rBEAQ1Y7PGSIBRTkAAB8mPrlARMAACh7QMabtYAAHyw695.jpg}>) no-repeat;}
+        section.c10{ background: url(<{asset:u/images/201511/2386379311.jpeg}>) no-repeat;}
+
+
+        .car1,.car5,.car9,.car13,.car17{ left:78px;top:73px;}
+        .car2,.car6,.car10,.car14,.car18{right:78px;top:73px;}
+        .car3,.car7,.car11,.car15,.car19{ left:78px;top:513px;}
+        .car4,.car8,.car12,.car16,.car20{right:78px;top:513px;}
+        .car {position:absolute;width: 244px; height: 370px;}
+        .car p { height: 50px;line-height: 50px; text-align: center; font-size: 24px;}
+        .car img {width: 244px; height: 234px; border-radius: 122px; border:solid black 1px;}
+        .sel_btn  { background: url(<{asset:u/images/201511/1571283591.jpeg}>) no-repeat;display: block; height:55px; width:211px; margin-left:15px;}
+
+
+        .footerSelect { position: fixed;bottom:100px; z-index: 20; display: none;}
+        .footerSelect li{ width: 110px; height: 110px; border-radius: 55px; border: solid black 1px; float: left; margin-left: 33px;}
+        .footerSelect li img{width: 110px; height: 110px;}
+
+        .endTitle{position:relative;top:45px;height:30px;line-height:30px;width:750px;font-size:30px;text-align:center;}
+        .end{position: relative;}
+        .end li{width: 234px; height:271px;background:url(<{asset:u/images/201511/1326185423.png}>) no-repeat;position: absolute;}
+        .end li p{position: absolute;top:271px;text-align: center; width:100%;line-height:25px;font-size:25px;z-index: 25;}
+        .end li.end1{ left : 10px; top : 82px;}
+        .end li.end2{ left : 254px; top : 82px;}
+        .end li.end3{ left : 498px; top : 82px;}
+        .end li.end4{ left : 135px; top : 358px;}
+        .end li.end5{ left : 380px; top : 358px;}
+        .end li img{width:200px;height: 200px;border:solid black 1px; background: white; border-radius: 100px;position: absolute;left:16px;top:34px;}
+        .endBg{background:url(<{asset:media/g1/M01/06/16/rBEAQ1Y8V6-IN9_bAAAcSJkbm4IAACiPQHU9h8AABxg254.jpg}>) no-repeat;width:280px;height:361px;position:absolute;top:690px;left:50%;margin-left:-140px;}
+        .endQuestion{width:280px;height:280px;margin-top:80px;}
+        .finalLogo{background: url(<{asset:media/g1/M02/06/15/rBEARFY7UQOIG9kfAACBh5v7GxIAACh8wN1VxcAAIGf490.png}>) no-repeat;width:212px;height:177px;position:absolute;left:40px;top:30px;}
+        .finalBg{position:absolute;left:160px;top:240px;background:url(<{asset:media/g1/M04/06/16/rBEARFY7VIOIbub9AAAZ-FKNvT8AACh9gHoNSwAABoQ782.png}>) no-repeat;width:423px;height:486px;}
+        .finalBg img{width:380px;height:380px;border:solid black 1px; background: white; border-radius: 190px;margin: 50px 0 0 20px;}
+        .finalBg p{position:absolute;width:640px;text-align: center;top:530px;font-size:60px;margin-left:-110px;}
+        .finalBtn{position: absolute; top:890px;left:50%;margin-left: -193px; width: 386px; height: 85px; display: block;background: url(<{asset:media/g1/M02/06/16/rBEARFY7VIOILWT1AAAY5iqSS-QAACh9wERzKMAABj-361.png}>) no-repeat;}
+        .music_ani {
+            -webkit-animation: music 2s linear infinite;
+            animation: music 2s linear infinite;
+        }
+
+        .music {
+            width: 83px;
+            height: 82px;
+            position: absolute;
+            top: 62px;
+            right: 26px;
+            z-index: 999;
+            background: url('<{asset:u/images/201510/4022501597.png}>') no-repeat center center;
+        }
+        @-webkit-keyframes music {
+            0% {
+                -webkit-transform:rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform:rotate(360deg);
+            }
+        }
+        @keyframes music {
+            0% {
+                transform:rotate(0deg);
+            }
+
+            100% {
+                transform:rotate(360deg);
+            }
+        }
+        @-webkit-keyframes opa-move { 0% {
+            opacity: 0.5;
+        }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        #showCar2 li.end1 img{-webkit-animation: opa-move 1s infinite ease;}
+        #showCar2 li.end2 img{-webkit-animation: opa-move 1.2s infinite ease;}
+        #showCar2 li.end3 img{-webkit-animation: opa-move 1.4s infinite ease;}
+        #showCar2 li.end4 img{-webkit-animation: opa-move 1.6s infinite ease;}
+        #showCar2 li.end5 img{-webkit-animation: opa-move 1.8s infinite ease;}
+    </style>
+</head>
+<body style="position:relative;">
+<div class="music music_ani"></div>
+<img id="shareImg" src="" style="position:fixed;left:-100%;" />
+
+<div class="share_img">
+    <img src="<{asset:u/images/201510/2383441749.png}>">
+</div>
+<div id="wrap">
+    <ul id="showCar" class="footerSelect clearfix">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <div id="scrollContent">
+        <section id="c0" class="content c0">
+            <div class="hint2"></div>
+        </section>
+        <section id="c1" class="content c1">
+            <div class="hint2"></div>
+        </section>
+        <section id="c2" class="content c2">
+            <div class="hint2"></div>
+        </section>
+        <section id="c3" class="content c3">
+            <div class="hint2"></div>
+            <div class="car car1"></div>
+            <div class="car car2"></div>
+            <div class="car car3"></div>
+            <div class="car car4"></div>
+        </section>
+        <section id="c4" class="content c4">
+            <div class="hint2"></div>
+            <div class="car car5"></div>
+            <div class="car car6"></div>
+            <div class="car car7"></div>
+            <div class="car car8"></div>
+        </section>
+        <section id="c5" class="content c5">
+            <div class="hint2"></div>
+            <div class="car car9"></div>
+            <div class="car car10"></div>
+            <div class="car car11"></div>
+            <div class="car car12"></div>
+        </section>
+        <section id="c6" class="content c6">
+            <div class="hint2"></div>
+            <div class="car car13"></div>
+            <div class="car car14"></div>
+            <div class="car car15"></div>
+            <div class="car car16"></div>
+        </section>
+        <section id="c7" class="content c7">
+            <div class="hint2"></div>
+            <div class="car car17"></div>
+            <div class="car car18"></div>
+            <div class="car car19"></div>
+            <div class="car car20"></div>
+        </section>
+        <style>
+
+        </style>
+        <section id="c8" class="content c8">
+            <div class="hint2"></div>
+            <p class="endTitle">终极PK五选一，点选最心仪年度车</p>
+            <ul id="showCar2" class="end">
+                <li class="end1"></li>
+                <li class="end2"></li>
+                <li class="end3"></li>
+                <li class="end4"></li>
+                <li class="end5"></li>
+            </ul>
+            <div class="endBg">
+                <img class="endQuestion" src="" alt="">
+            </div>
+
+        </section>
+        <section id="c9" class="content c9">
+            <div class="hint2"></div>
+            <div class="finalLogo"></div>
+            <div id="finalBg" class="finalBg">
+                <img id="finalImg" src="" alt="">
+                <p id="finalP"></p>
+            </div>
+            <input id="finalBtn" type="button" class="finalBtn">
+
+        </section>
+        <section id="c10" class="content c10">
+            <input id="appointment"  type="button" style="height:85px; width:386px;display:block;background:url(<{asset:media/g1/M02/06/16/rBEAQ1Y8a56IKlheAAAZ4TIzLzsAACiRQPECtEAABn5543.jpg}>) no-repeat; position:absolute; left:50%;margin-left:-193px;bottom:80px;">
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+</div>
+
+<iframe frameborder="0" style="display: none;" id="share_iframe"></iframe>
+<!--
+<script src="<{asset:js/jquery/jquery-1.8.3.min.js}>"></script>
+ -->
+
+<script>
+    Zepto(function ($){
+        $(".share_img").click(function(){
+            $(".share_img").hide();
+        });
+        if (navigator.userAgent.indexOf( 'MicroMessenger' ) >= 0){
+            // document.addEventListener( 'WeixinJSBridgeReady' ,  function () {
+            //  //WeixinJSBridge.call('hideToolbar');
+            // });
+            $("#appointment").click(function(){
+                window.location.href = "http://3g.yongche.com/touch/";
+            })
+        } else {
+            $("#appointment").click(function(){
+                window.location.href = "yongche://neworder?type=asap";
+            })
+        }
+
+        if(!uid){
+            var uid = Math.pow(Math.random(),3).toString(36).substring(2);
+            setCookie("uid",uid)
+        } else {
+            uid = getCookie("uid")
+        }
+
+
+        $("#finalBtn").click(function(){
+            $.ajax({
+                url: 'http://market.yongche.com/Miscellaneous/Car/vote',
+                type: 'GET',
+                dataType: 'json',
+                data: {openid: uid,car_id:(parseInt($("#finalImg").attr('alt'))+1)},
+                success:function(j){
+                    alert(j.msg)
+                    $(".share_img").show();
+                },
+                error:function(error){
+                    alert(error.msg)
+                }
+            })
+
+        })
+
+
+
+        setCookie("carSelect","000000000000000000000");//刷新页面清除cookie
+        if (navigator.userAgent.indexOf( 'iPhone' ) >= 0 && (window.screen.height == 480)){
+            document.getElementById("showCar").style.display = "none !important";
+        }
+        $('.music').bind('touchstart', function (e) {//开关音乐
+            if($(this).hasClass('music_ani')) {
+                $(this).removeClass('music_ani');
+                bg.pause();
+            } else {
+                $(this).addClass('music_ani');
+                bg.play();
+            }
+        });
+
+        var cCar = [
+            { src:"<{asset:u/images/201511/917529819.png}>" ,name:"一汽丰田混动卡罗拉"   , id : "1"},
+            { src:"<{asset:u/images/201511/62380688.png}>"  ,name:"奥迪Q7"      , id : "2"},
+            { src:"<{asset:u/images/201511/3955431307.png}>",name:"斯巴鲁力狮"   , id : "3"},
+            { src:"<{asset:u/images/201511/4234113330.png}>",name:"玛莎拉蒂总裁轿车" , id : "4"},
+            { src:"<{asset:u/images/201511/1380517939.png}>",name:"沃尔沃XC90"   , id : "5"},
+            { src:"<{asset:u/images/201511/114031936.png}>" ,name:"三菱欧蓝德"   , id : "6"},
+            { src:"<{asset:u/images/201511/447098405.png}>" ,name:"宾利添越"     , id : "7"},
+            { src:"<{asset:u/images/201511/1011999554.png}>",name:"奔驰GLE Coupe", id : "8"},
+            { src:"<{asset:u/images/201511/2592036103.png}>",name:"长安福特金牛座", id : "9"},
+            { src:"<{asset:u/images/201511/282410706.png}>" ,name:"保时捷911GT3 RS", id : "10"},
+            { src:"<{asset:media/g1/M02/06/16/rBEAQ1Y8Xv-IDqwQAAAjjSunMJkAACiOwP_zm4AACOl312.png}>",name:"福特野马" , id : "11"},
+            { src:"<{asset:u/images/201511/4081347061.png}>",name:"宝马7系"         , id : "12"},
+            { src:"<{asset:u/images/201511/2687887087.png}>",name:"DS 5"           , id : "13"},
+            { src:"<{asset:media/g1/M02/06/16/rBEARFY8Xv-IdH4cAAApIL_5M_sAACiQQIzOQQAACk4215.png}>",name:"Mini Clubman" , id : "14"},
+            { src:"<{asset:media/g1/M04/06/16/rBEARFY8Xv-IYgpBAAAgyDLShrsAACiPgPVezgAACDg482.png}>" ,name:"奔驰S级迈巴赫" , id : "15"},
+            { src:"<{asset:u/images/201511/41515230.png}>"  ,name:"捷豹XE"         , id : "16"},
+            { src:"<{asset:u/images/201511/4228459512.png}>",name:"雷克萨斯LX570"   , id : "17"},
+            { src:"<{asset:u/images/201511/3050712061.png}>",name:"国产路虎 发现神行", id : "18"},
+            { src:"<{asset:media/g1/M01/06/16/rBEAQ1Y8Xv-IbNQjAAAyqFpMnRMAACiQAMXwY8AADLA364.png}>",name:"进口大众T5迈特威" , id : "19"},
+            { src:"<{asset:u/images/201511/3938259394.png}>",name:"林肯MKX"         , id : "20"}
+        ]
+
+
+
+
+        function getCookie(name){
+            var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
+            if(arr=document.cookie.match(reg)){
+                return unescape(arr[2]);
+            } else {
+                return null;
+            }
+        }
+        function setCookie(name, value){
+            var argv = setCookie.arguments;
+            var argc = setCookie.arguments.length;
+            var expires = (argc > 2) ? argv[2] : null;
+            if(expires!=null){
+                var LargeExpDate = new Date ();
+                LargeExpDate.setTime(LargeExpDate.getTime() + (expires*1000*3600*24));
+            }
+            document.cookie = name + "=" + escape (value)+((expires == null) ? "" : ("; expires=" +LargeExpDate.toGMTString()));
+        }
+
+        function to1(cookie,changeNum,x01){//还需要判断超过5个1  return
+            changeNum = parseInt(changeNum)
+            var nCo = 0;
+            for(var i = 0; i < cookie.length ; i++){
+                nCo += parseInt(cookie[i]);
+            }
+            if(x01 == 1){
+                if(nCo==4){
+                    onTouch.goDown(8);
+                } else if(nCo==5){
+                    onTouch.goDown(8);
+                    console.log(nCo)//不能大于5
+                    return cookie;
+
+                }
+            }
+            var x = cookie.substring(0,changeNum-1);
+            var y = cookie.substring(changeNum,21);
+            return x.concat(x01,y)
+        }
+        $.each( cCar , function(index, el) {//把20辆车写入html
+            var $car,$carP,$carI;
+            $.each(el , function(key , value){
+                $car = $("<img src='"+el['src']+"' alt='"+el['id']+"'>")
+                $carP = $("<p>"+el['name']+"</p>")
+                $carI = $("<input type='button' class='sel_btn' id='a"+el['id']+"'>")
+            })
+            $(".car").eq(index).append($car)
+            $(".car").eq(index).append($carP)
+            $(".car").eq(index).append($carI)
+        });// End of cCar.writeIn
+
+
+        $(".sel_btn").click(function() {//id------ $(this).attr('id')  点击 加车 存cookie
+            var $cid = $(this).attr('id');
+            var cookieCar = getCookie("carSelect");
+            $cid = $cid.substring(1)
+
+            if(!cookieCar){//第一次存cookie
+                setCookie("carSelect","000000000000000000000")
+                cookieCar = getCookie("carSelect");
+                console.log("存cookie")
+            }
+            cookieCar = to1(cookieCar,$cid,"1")
+            setCookie("carSelect",cookieCar)
+            showCar();
+        });
+
+
+        function showCar(){//获取cookie  展现车
+            var carArr = [];
+            var cookieCar = getCookie("carSelect");
+            if(!cookieCar){
+                return;
+            }
+            for(var i = 0; i < cookieCar.length; i++){
+                if(parseInt(cookieCar[i])==1){
+                    carArr.push(parseInt(i))
+                }
+            }
+            $("#showCar li").html("")
+            for(var i = 0; i < carArr.length; i++){
+                $("#showCar li")[i].innerHTML = '<img class="removeCookie" src="'+cCar[carArr[i]].src+'" data-n="'+carArr[i]+'" alt="">';
+            }
+            $("#showCar2 li").html("")
+            for(var i = 0; i < carArr.length; i++){
+                $("#showCar2 li")[i].innerHTML = '<img src="'+cCar[carArr[i]].src+'" data-n="'+carArr[i]+'" alt="'+cCar[carArr[i]].name+'"><p>'+cCar[carArr[i]].name+'</p>';
+            }
+
+            clearInterval(timer);
+            var timer = setInterval(next,200)
+            var imgI = 0;
+            function next(){
+                $(".endQuestion").attr('src', cCar[carArr[imgI]].src);
+                // console.log(cCar[carArr[imgI]].src)
+                imgI++;
+                if(imgI>carArr.length-1){
+                    imgI = 0;
+                }
+            }
+
+            $("#showCar2 img").live("click",function(){//最终选车
+                clearInterval(timer);
+                $(".endQuestion").attr('src', $(this).attr('src'));
+                $(".finalBg img").attr('src', $(this).attr('src'));
+                $(".finalBg img").attr('alt', $(this).attr('data-n'));
+                $(".finalBg p").html($(this).attr('alt'));
+                onTouch.goDown(9)
+            })
+
+
+            //showCar2  下选出来的5辆车 闪动
+
+
+        }//end of showCar
+        showCar()
+
+
+
+        // document.getElementsByClassName("removeCookie") = function(){
+
+        // }
+        $(".removeCookie").live("click",function(){//删除cookie  删除车
+            console.log(123)
+            var cookieCar = getCookie("carSelect");
+            var $cid2 = parseInt($(this).attr('data-n'))+1;
+            console.log($cid2);
+            cookieCar = to1(cookieCar,$cid2,"0")
+            setCookie("carSelect",cookieCar)
+            showCar();
+        })
+
+
+
+        var data = [
+            {//第二幕动画内容，分两部分，隐藏和显示
+                "wrapId" : "c0",
+                "animateIds" : ["pptit01", "pptit02", "pptit03"  ],
+                "animateClass":["pptit01" , "pptit02" , "pptit03" ],
+                "done" : false
+            },{
+                //第二幕动画内容，分两部分，隐藏和显示
+                "wrapId" : "c1",
+                "animateIds" : ["pp01"],
+                "animateClass":[ "pp01"],
+                "done" : false
+            },{
+                "wrapId" : "c2",
+                "animateIds" : ["pp2_01"],
+                "animateClass":["pp2_01"],
+                "done" : false
+            },{
+                "wrapId" : "c3",
+                "animateIds" : [ "pp3_01", "pp3_02"],
+                "animateClass":["pp3_01" ,"pp3_02"],
+                "done" : false
+            },{
+                "wrapId" : "c4",
+                "animateIds" : [ "pp4_01"],
+                "animateClass":["pp4_01"],
+                "done" : false
+            },{
+                "wrapId" : "c5",
+                "animateIds" : [ "pp5_01","pp5_02"],
+                "animateClass":["pp5_01","pp5_02"],
+                "done" : false
+            },{
+                "wrapId" : "c6",
+                "animateIds" : ["pp6_01","pp6_02","pp6_03"],
+                "animateClass":["pp6_01","pp6_02","pp6_03"],
+                "done" : false
+            },{
+                "wrapId" : "c7",
+                "animateIds" : ["pp6_01","pp6_02","pp6_03"],
+                "animateClass":["pp6_01","pp6_02","pp6_03"],
+                "done" : false
+            },{
+                "wrapId" : "c8",
+                "animateIds" : ["pp6_01","pp6_02","pp6_03"],
+                "animateClass":["pp6_01","pp6_02","pp6_03"],
+                "done" : false
+            }
+        ];
+
+        var filterClass = {
+            blur : "blur",
+            focus : "focus"
+        }
+
+        var $w = $(window),$body=$("body"),$wrap = $("#wrap"),
+                $scrollContent = $("#scrollContent"),$content = $(".content");
+        // $loading = $("#loading"),
+        var contentLength = $content.size();
+
+        function initPage(){
+            var wH = $body.height(),wW = $body.width();
+            $wrap.css({ "height" : wH });
+            $scrollContent.css({ "height" : wH*contentLength });
+            $content.css({ "height" : wH });
+            $(".classname").css({ "top" : parseInt(wW*150/750)+"px" });//图片位置居上边高度 配合 background-size: 100% auto;使用
+        }
+
+        function resize(){
+            initPage();
+        }
+
+        function windowLoad(){
+            // $("#loading").css({display: "none"});
+            // setTimeout(function(){onTouch.initAddClass()},2000);
+            $content.first().addClass("focus");
+        }
+
+
+
+        var onTouch = {//这里出现的this都是指onTouch
+            startY : 0,
+            currentTop : 0,
+            i_current:0,
+            wH:$("body").height(),
+            onStart : function (e){
+                this.startY = e.pageY;//首次触屏的位置
+                this.currentTop = this.i_current*this.wH;//这个值带px单位
+                //console.log("首次触屏的位置："+this.startY)
+                if($(e.target).hasClass("abtn")){
+                    this.i_current=1;
+                    $scrollContent.css({ "-webkit-transform" : "translate3d(0,"+( -this.i_current*this.wH)+ "px,0px)" });
+                }
+            },
+            onMove : function (e){
+                event.preventDefault();
+            },
+            onEnd : function (e){
+                //console.log("结束触屏的位置："+e.pageY)
+                if (this.startY > e.pageY+50) {//向上划屏幕 e.pageY 越靠上越小
+                    this.goDown();
+                }else if (this.startY < e.pageY-50) {//向下划屏幕
+                    this.goUp();
+                };
+            },
+            goDown : function(x){
+                // console.log(this.i_current) //弹出页数序号
+                if(this.i_current == 2){
+                    setTimeout(function(){
+                        if (window.screen.height < 500){
+                            document.getElementById("showCar").style.display = "none";
+                        } else {
+                            document.getElementById("showCar").style.display = "block"
+                        }
+                    },700)
+                }else if(this.i_current<7 && this.i_current >2){ //选中汽车页 圆圈的显示与隐藏
+                    if (window.screen.height < 500){
+                        document.getElementById("showCar").style.display = "none";
+                    } else {
+                        document.getElementById("showCar").style.display = "block"
+                    }
+                } else {
+                    document.getElementById("showCar").style.display = "none"
+                    // $(".footerSelect").hide();
+                }
+                this.i_current++;
+                if(x){
+                    this.i_current = x;
+                    if(this.i_current>contentLength-1){this.i_current=contentLength-1}
+                    this.contentScroll("down","hide");
+                } else{
+                    if(this.i_current>contentLength-1){this.i_current=contentLength-1}
+                    this.contentScroll("down");
+                }
+            },
+            goUp : function(){
+                if(this.i_current == 8){
+                    setTimeout(function(){
+                        if (window.screen.height < 500){
+                            document.getElementById("showCar").style.display = "none";
+                        } else {
+                            document.getElementById("showCar").style.display = "block"
+                        }
+                    },700)
+                }else if(this.i_current<8 && this.i_current >3){//选中汽车页 圆圈的显示与隐藏
+                    if (window.screen.height < 500){
+                        document.getElementById("showCar").style.display = "none";
+                    } else {
+                        document.getElementById("showCar").style.display = "block"
+                    }
+                } else {
+                    $(".footerSelect").hide();
+                }
+                this.i_current--;
+                if(this.i_current<0){this.i_current=0}
+                this.contentScroll("up");
+            },
+            contentScroll : function(flag,sec){
+                if (flag=="down") {//contentLength总共有几屏幕的内容
+                    if(this.i_current==0){$("#c0").find(div).css("-webkit-animation-play-state","running");}
+                    $scrollContent.css({
+                        "-webkit-transform" : "translate3d(0,"+( -this.i_current*this.wH)+ "px,0px)"
+                    });
+                    if(this.i_current==3){$(".box_input").addClass("box_input_current")}
+                    this.filterClass("down");
+                    if(sec=="hide"){
+                        $(".footerSelect").hide();
+                    }
+                }else if (flag=="up"){
+                    $scrollContent.css({
+                        "-webkit-transform" : "translate3d(0,"+( -this.i_current*this.wH)+ "px,0px)"
+                    });
+                    $(".box_input").removeClass("box_input_current");
+                    this.filterClass("up");
+                };
+                this.addClass();
+            },
+            getCurrentIndex : function(){
+                return Math.abs(this.i_current);
+            },
+            addClass : function(n){
+                var index = this.i_current;
+                var currentObj = data[index];
+                if (currentObj["done"]) {return;};
+                for (var i = 0; i < currentObj["animateIds"].length; i++) {
+                    $("#" + currentObj["animateIds"][i]).addClass(currentObj["animateClass"][i]);
+                };
+                currentObj["done"] = true;
+            },
+            initAddClass : function(){
+                this.addClass(0);
+            },
+            filterClass : function(flag){
+                var index = this.getCurrentIndex();
+                if (flag=="up" && index < contentLength-1) {
+                    $("#" + data[index]["wrapId"]).addClass(filterClass.focus);
+                }else if (flag=="down" && index > 0) {
+                    $("#" + data[index]["wrapId"]).addClass(filterClass.focus);
+                };
+            }
+        };
+
+        (function(){
+            initPage();
+            window.onload = windowLoad;
+            window.onscroll = scroll;
+            window.onresize = false;
+            window.onorientationchange = false;
+
+            document.body.addEventListener('touchstart', function (e) {
+                e = e.changedTouches[0];
+                onTouch.onStart(e);
+            });
+            document.body.addEventListener('touchmove', function (e) {
+                onTouch.onMove(e.changedTouches[0], e);
+            });
+            document.body.addEventListener('touchend', function (e) {
+                onTouch.onEnd(e.changedTouches[0]);
+            });
+
+
+        })();
+    });
+</script>
+<script>
+    var bg = document.createElement('audio');
+    bg.src = '<{asset:media/g1/M04/06/16/rBEAQ1Y8fUaIc-lmAA7HyZtqYVMAACiSgN4JcgADsfh512.mp3}>';
+    bg.loop = true;
+    bg.autoplay = true;
+    bg.play();
+
+    (function () {//分享
+        var shareImg = "<{asset:media/g1/M02/06/15/rBEAQ1Y7D22IbEkyAACqPd4VSxwAACh3QNdwJYAAKpV218.jpg}>";
+        var shareTitle = "谁是2015年汽车巨星？由你决定！";
+
+        document.title = shareTitle;
+        document.getElementById("shareImg").src = shareImg;
+        // 分享变量设置
+        var _protocolLinkBase = "yongche://share?";
+        var _protocolLinkFriend = "yongche://shareToFriend?";
+        var _protocolLinkTimeline = "yongche://shareToTimeline?";
+        var shareRead_link = encodeURIComponent(location.href);// 分享地址
+        var shareRead_pics = encodeURIComponent(shareImg);// 分享的图片
+        var shareRead_title = encodeURIComponent(shareTitle);// 分享的标题
+        var shareRead_content = encodeURIComponent('易到用车联手爱车的你 共同打造“2015座驾年度车”');// 分享的内容  //
+        var shareRead_sourceType = 42;
+
+        var Tools = {
+            shareThisPageToFriend:function(){
+                var _str = "link="+shareRead_link+"&pics="+shareRead_pics+"&title="+shareRead_title+"&content="+shareRead_content+"&sourceType="+shareRead_sourceType;
+                var _tmpOpenLink = _protocolLinkFriend + _str;
+                window.location.href = _tmpOpenLink;
+            },
+            shareThisPageToTimeline:function(){
+                var _str = "link="+shareRead_link+"&pics="+shareRead_pics+"&title="+shareRead_title+"&content="+shareRead_content+"&sourceType="+shareRead_sourceType;
+                var _tmpOpenLink = _protocolLinkTimeline + _str;
+                window.location.href = _tmpOpenLink;
+            },
+            shareBase:function(){
+                var _str = "link="+shareRead_link+"&pics="+shareRead_pics+"&title="+shareRead_title+"&content="+shareRead_content+"&sourceType="+shareRead_sourceType;
+                var _tmpOpenLink = _protocolLinkBase + _str;
+                window.location.href = _tmpOpenLink;
+            }
+        };
+        var _str = "link="+shareRead_link+"&pics="+shareRead_pics+"&title="+shareRead_title+"&content="+shareRead_content+"&sourceType="+shareRead_sourceType+"&from=iframe";
+        var _tmpOpenLink = _protocolLinkBase + _str;
+        document.getElementById("share_iframe").src = _tmpOpenLink;
+
+
+
+        var cCar2 = [
+            { src:"<{asset:media/g1/M02/06/16/rBEAQ1Y8q_2IXBkXAAAr0rtjIQgAACiVQP_klgAACvq196.jpg}>" ,name:"混动卡罗拉"   , id : "1"},
+            { src:"<{asset:media/g1/M03/06/17/rBEAQ1Y8q0iIcw8gAAAv0JPArZ4AACiWQESpicAAC_o745.jpg}>"  ,name:"奥迪Q7"      , id : "2"},
+            { src:"<{asset:media/g1/M02/06/16/rBEARFY8rHWIbaPKAAAmP9btDjkAACiVQP_vkIAACZX418.jpg}>",name:"斯巴鲁力狮"   , id : "3"},
+            { src:"<{asset:media/g1/M01/06/17/rBEARFY8rD6IQxdaAAAkBe95TvkAACiWAIscVMAACQd305.jpg}>",name:"玛莎拉蒂总裁轿车" , id : "4"},
+            { src:"<{asset:media/g1/M03/06/17/rBEARFY8rHWIFb60AAAibwSCUBsAACiWQETvx0AACKH558.jpg}>",name:"沃尔沃XC90"   , id : "5"},
+            { src:"<{asset:media/g1/M01/06/17/rBEAQ1Y8rHWIZMzyAAAtHZpY-9sAACiWAJDDAkAAC01204.jpg}>" ,name:"三菱欧蓝德"   , id : "6"},
+            { src:"<{asset:media/g1/M01/06/17/rBEAQ1Y8q_2IAJZeAABM-okFAl8AACiWAIsJEEAAE0S825.jpg}>" ,name:"宾利添越"     , id : "7"},
+            { src:"<{asset:media/g1/M01/06/17/rBEARFY8q4iIO14RAAAjtmW9i3YAACiWAIrlKAAACPO856.jpg}>",name:"奔驰GLE Coupe", id : "8"},
+            { src:"<{asset:media/g1/M01/06/17/rBEAQ1Y8rHWIXqagAAAh3BQxys0AACiWAJDOT4AACH0208.jpg}>",name:"长安福特金牛座", id : "9"},
+            { src:"<{asset:media/g1/M04/06/16/rBEAQ1Y8q4iIfMfiAAA66-2cvdMAACiVwOJxhEAADsD320.jpg}>" ,name:"保时捷911 GT3 RS", id : "10"},
+            { src:"<{asset:media/g1/M03/06/17/rBEARFY8q_2IBiuWAAAxrQWb8DAAACiWQETEr4AADHF547.jpg}>",name:"福特野马"        , id : "11"},
+            { src:"<{asset:media/g1/M03/06/17/rBEAQ1Y8q4iIOY_VAAA8l05b3j8AACiWQES1g8AADyv071.jpg}>",name:"宝马7系"         , id : "12"},
+            { src:"<{asset:media/g1/M01/06/17/rBEAQ1Y8q0iIaeQKAAAxCYZnIG0AACiWAIqrEEAADEh893.jpg}>",name:"DS 5"           , id : "13"},
+            { src:"<{asset:media/g1/M02/06/19/rBEAQ1ZAOLWIHQjCAAAtJTA7GkgAACjPAOj21kAAC09694.jpg}>",name:"Mini Clubman"   , id : "14"},
+            { src:"<{asset:media/g1/M02/06/16/rBEARFY8q4iIIKYdAAAi0tzabY8AACiVQP-1Q8AACLq420.jpg}>" ,name:"奔驰S级迈巴赫"   , id : "15"},
+            { src:"<{asset:media/g1/M04/06/16/rBEARFY8rD6IfiqwAAAmP0gknOoAACiVwOKtOEAACZX971.jpg}>"  ,name:"捷豹XE"         , id : "16"},
+            { src:"<{asset:media/g1/M03/06/17/rBEAQ1Y8rD2Ib7wFAAAqioKkqe8AACiWQETcwQAACqi144.jpg}>",name:"雷克萨斯LX570"   , id : "17"},
+            { src:"<{asset:media/g1/M03/06/17/rBEARFY8q_2IPfQEAAAuad_MF6UAACiWQETRIMAAC6B375.jpg}>",name:"国产路虎 发现神行", id : "18"},
+            { src:"<{asset:media/g1/M03/06/16/rBEARFY8q0eIAk6QAAAsrwoTw8QAACiVAP_yLQAACzH841.jpg}>",name:"T5迈特威"        , id : "19"},
+            { src:"<{asset:media/g1/M03/06/17/rBEAQ1Y8rD2IfkwsAAAhX0uBCvsAACiWQETnaYAACF3161.jpg}>",name:"林肯MKX"         , id : "20"}
+        ]
+        document.getElementById("finalBtn").onclick = function(){///////////onclick
+            var index = document.getElementById("finalImg").alt;
+            shareTitle = document.getElementById("finalP").innerHTML+'是我评选的2015年度车巨星！《座驾car》封面你也能决定！';
+            document.title = shareTitle;
+            shareImg = cCar2[index].src;
+            document.getElementById("shareImg").src = cCar2[index].src;
+            console.log(cCar2[index].src)
+
+            shareRead_pics = encodeURIComponent(shareImg);// 分享的图片
+
+            shareRead_title = encodeURIComponent(shareTitle);// 分享的标题
+            Tools = {
+                shareThisPageToFriend:function(){
+                    var _str = "link="+shareRead_link+"&pics="+shareRead_pics+"&title="+shareRead_title+"&content="+shareRead_content+"&sourceType="+shareRead_sourceType;
+                    var _tmpOpenLink = _protocolLinkFriend + _str;
+                    window.location.href = _tmpOpenLink;
+                },
+                shareThisPageToTimeline:function(){
+                    var _str = "link="+shareRead_link+"&pics="+shareRead_pics+"&title="+shareRead_title+"&content="+shareRead_content+"&sourceType="+shareRead_sourceType;
+                    var _tmpOpenLink = _protocolLinkTimeline + _str;
+                    window.location.href = _tmpOpenLink;
+                },
+                shareBase:function(){
+                    var _str = "link="+shareRead_link+"&pics="+shareRead_pics+"&title="+shareRead_title+"&content="+shareRead_content+"&sourceType="+shareRead_sourceType;
+                    var _tmpOpenLink = _protocolLinkBase + _str;
+                    window.location.href = _tmpOpenLink;
+                }
+            };//end of tools
+
+            _str = "link="+shareRead_link+"&pics="+shareRead_pics+"&title="+shareRead_title+"&content="+shareRead_content+"&sourceType="+shareRead_sourceType+"&from=iframe";
+            _tmpOpenLink = _protocolLinkBase + _str;
+            document.getElementById("share_iframe").src = _tmpOpenLink;
+        }
+
+
+
+
+    })()
+</script>
+<{block:bd/sjjk.tpl}>
+<{block:bd/sjjk1.tpl}>
+</body>
+</html>
