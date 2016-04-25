@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', function(){
   var aLi   = oUl.children;
   var y = 0,space = 50,iNow = 0;
   oWrap.addEventListener('touchstart',function(ev){
-    alert(ev.targetTouches[0].target)
+    document.title = (ev.targetTouches[0].target)
     var startY = ev.targetTouches[0].pageY;
     var disY = startY - y;
     oUl.style.WebkitTransition = 'none';
