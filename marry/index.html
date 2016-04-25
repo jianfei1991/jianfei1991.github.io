@@ -91,9 +91,7 @@ function $$(dom){
 }
 
 document.addEventListener('DOMContentLoaded', function(){
-  $("input,textarea,select").bind("blur",function(){
-    document.body.scrollTop = 0;
-  })
+
   var oWrap = document.querySelector(".wrap");
   var oUl   = document.querySelector('.wrap ul');
   var aLi   = oUl.children;
