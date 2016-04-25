@@ -6,7 +6,7 @@
 <meta name="screen-orientation" content="portrait"><!-- uc强制竖屏 -->
 <meta name="x5-orientation" content="portrait"><!-- QQ强制竖屏 -->
 <title>我们的幸福需要您的祝福与见证</title>
-<script>
+<script> 
   if (/Android (\d+\.\d+)/.test(navigator.userAgent)){//安卓
     var  version = parseFloat(RegExp.$1);
     if (version>2.3){
@@ -22,6 +22,38 @@
 <!-- <{block:bd/wjf_header.tpl}> -->
 <!-- 内含GA、windowOnload(fn)、$$(dom).css({json})、getStyle(obj, name)、move(obj, json, options)->options:{time、type、fn} -->
 <style>
+.music_ani {
+    -webkit-animation: music 2s linear infinite;
+    animation: music 2s linear infinite;
+}
+
+.music {
+    width: 43px;
+    height: 42px;
+    position: absolute;
+    top: 62px;
+    right: 26px;
+    z-index: 999;
+    background: url('http://i3.yongche.name/u/images/201510/4022501597.png?1445541000') no-repeat center center;
+}
+@-webkit-keyframes music {
+  0% {
+    -webkit-transform:rotate(0deg);
+  }
+
+  100% {
+    -webkit-transform:rotate(360deg);
+  }
+}
+@keyframes music {
+  0% {
+    transform:rotate(0deg);
+  }
+
+  100% {
+    transform:rotate(360deg);
+  }
+}
 
 #container{height:100%;height: 400px; position: fixed; top: 0; width: 100%; z-index: 100;}
 
@@ -55,8 +87,10 @@
 </style>
 <!-- <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=2mwtdXnkn8nG4WhSFRTzZAPYDKsWz4i2"></script> -->
 </head>
+<script src="http://i3.yongche.name/js/jquery/jquery-1.7.2.min.js?1438197360"></script>
 <body>
 <img id="shareImg" src="./images/share.jpg" style="position:fixed;left:-100%;" />
+<div class="music music_ani"></div>
   <div class="wrap">
 <!--    <div>
           <div id="container"></div>
@@ -153,6 +187,24 @@ document.addEventListener('DOMContentLoaded', function(){
         console.log('竖屏状态');
       };
     }
+</script>
+<script>
+  $('.music').bind('touchstart', function (e) {
+    if($(this).hasClass('music_ani')) {
+      $(this).removeClass('music_ani');
+      bg.pause();
+    } else {
+      $(this).addClass('music_ani');
+      bg.play();
+    }
+   });
+
+
+var bg = document.createElement('audio');
+bg.src = './mp3.mp3';
+bg.loop = true;
+bg.autoplay = true;
+bg.play();
 </script>
 </body>
 </html>
