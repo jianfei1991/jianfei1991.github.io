@@ -90,12 +90,18 @@ function $$(dom){
   return document.querySelector(dom);
 }
 
+var y = 0,space = 50,iNow = 0;
+var oWrap = document.querySelector(".wrap");
+var oUl   = document.querySelector('.wrap ul');
+var aLi   = oUl.children;
+document.getElementById("").onclick = function(){
+  iNow = 2;
+  y = -iNow*aLi[0].offsetHeight;
+  oUl.style.WebkitTransition = '0.6s all ease-out';
+  oUl.style.WebkitTransform  = 'translateY('+y+'px)';
+}
 document.addEventListener('DOMContentLoaded', function(){
 
-  var oWrap = document.querySelector(".wrap");
-  var oUl   = document.querySelector('.wrap ul');
-  var aLi   = oUl.children;
-  var y = 0,space = 50,iNow = 0;
   oWrap.addEventListener('touchstart',function(ev){
     document.title = (ev.targetTouches[0].target)
     var startY = ev.targetTouches[0].pageY;
