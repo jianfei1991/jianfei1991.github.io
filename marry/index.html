@@ -1,9 +1,3 @@
-<?php
-    define('NO_AUTH',1);
-    require $_SERVER['PHP_ROOT'] . 'init.inc.php';
-    $url = YC_Util::getCurrentUrl();
-    $js_data = YC_Util::getWeixinSignature($url);
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -59,10 +53,8 @@
   .bridegroom{top: 900px;}
   .bride{top: 1020px;}
 </style>
-<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=2mwtdXnkn8nG4WhSFRTzZAPYDKsWz4i2"></script>
+<!-- <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=2mwtdXnkn8nG4WhSFRTzZAPYDKsWz4i2"></script> -->
 </head>
-<script src="http://i2.yongche.name/js/jquery/jquery-1.8.3.min.js?1456255560"></script>
-<script src="http://i3.yongche.name/js/app/i/weixin/js-api.min.js?1456686600"></script>
 <body>
 <img id="shareImg" src="./images/share.jpg" style="position:fixed;left:-100%;" />
   <div class="wrap">
@@ -87,11 +79,11 @@
   </div>
 <iframe frameborder="0" style="display: none;" id="share_iframe"></iframe>
 <script type="text/javascript">
-var map = new BMap.Map("container");
-var point = new BMap.Point(116.3818, 39.9034);
-map.centerAndZoom(point, 15);
-var marker = new BMap.Marker(point);        // 创建标注
-map.addOverlay(marker);
+// var map = new BMap.Map("container");
+// var point = new BMap.Point(116.3818, 39.9034);
+// map.centerAndZoom(point, 15);
+// var marker = new BMap.Marker(point);        // 创建标注
+// map.addOverlay(marker);
 </script>
 <script>
 function $$(dom){
