@@ -11,7 +11,7 @@
 <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
 <meta name="screen-orientation" content="portrait"><!-- uc强制竖屏 -->
 <meta name="x5-orientation" content="portrait"><!-- QQ强制竖屏 -->
-<title>2</title>
+<title>3</title>
 <script>
   if (/Android (\d+\.\d+)/.test(navigator.userAgent)){//安卓
     var  version = parseFloat(RegExp.$1);
@@ -29,7 +29,7 @@
 <!-- 内含GA、windowOnload(fn)、$$(dom).css({json})、getStyle(obj, name)、move(obj, json, options)->options:{time、type、fn} -->
 <style>
 
-#container{height:100%;}
+#container{height:100%;height: 400px; position: absolute; top: 2000px; width: 100%; z-index: 100;}
 
 
   *{ margin: 0; padding: 0; list-style: none;}
@@ -67,7 +67,7 @@
 <img id="shareImg" src="" style="position:fixed;left:-100%;" />
   <div class="wrap">
 
-        <div style=" height: 4000px; position: absolute; top: 2000px; width: 100%; z-index: 100;">
+        <div>
           <div id="container"></div>
         </div>
     <ul>
