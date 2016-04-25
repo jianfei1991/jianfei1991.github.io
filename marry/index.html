@@ -102,50 +102,50 @@ function $$(dom){
   return document.querySelector(dom);
 }
 
-document.addEventListener('DOMContentLoaded', function(){
-  $("input,textarea,select").bind("blur",function(){
-    document.body.scrollTop = 0;
-  })
-  var oWrap = document.querySelector(".wrap");
-  var oUl   = document.querySelector('.wrap ul');
-  var aLi   = oUl.children;
-  var y = 0,space = 50,iNow = 0;
-  oWrap.addEventListener('touchstart',function(ev){
-    document.title = (ev.targetTouches[0].target)
-    var startY = ev.targetTouches[0].pageY;
-    var disY = startY - y;
-    oUl.style.WebkitTransition = 'none';
+// document.addEventListener('DOMContentLoaded', function(){
+//   $("input,textarea,select").bind("blur",function(){
+//     document.body.scrollTop = 0;
+//   })
+//   var oWrap = document.querySelector(".wrap");
+//   var oUl   = document.querySelector('.wrap ul');
+//   var aLi   = oUl.children;
+//   var y = 0,space = 50,iNow = 0;
+//   oWrap.addEventListener('touchstart',function(ev){
+//     document.title = (ev.targetTouches[0].target)
+//     var startY = ev.targetTouches[0].pageY;
+//     var disY = startY - y;
+//     oUl.style.WebkitTransition = 'none';
 
-    function fnMove(ev){
-      y = ev.targetTouches[0].pageY-disY;
-      //oUl.style.WebkitTransform = 'translateY('+y+'px)';
-      ev.preventDefault();
-      // ev.cancelBubble = true;
-    }
-    function fnEnd(ev){
-      oWrap.removeEventListener('touchmove',fnMove,false);
-      oWrap.removeEventListener('touchend' ,fnEnd,false);
-      // console.log(y);
-      var upY = ev.changedTouches[0].pageY;
-      if(Math.abs(upY-startY)>space){
-        if(startY>upY){//开始>结束
-          iNow++;
-          if(iNow>=aLi.length)iNow=aLi.length-1;
-        } else {
-          iNow--;
-          if(iNow<=0)iNow=0;
-        }
-      }
-      console.log("iNow="+iNow)
-      y = -iNow*aLi[0].offsetHeight;
-      oUl.style.WebkitTransition = '0.6s all ease-out';
-      oUl.style.WebkitTransform  = 'translateY('+y+'px)';
-      document.body.scrollTop = 0;
-    }
-    oWrap.addEventListener("touchmove",fnMove,false);
-    oWrap.addEventListener("touchend" ,fnEnd,false);
-  },false)
-},false)
+//     function fnMove(ev){
+//       y = ev.targetTouches[0].pageY-disY;
+//       //oUl.style.WebkitTransform = 'translateY('+y+'px)';
+//       ev.preventDefault();
+//       // ev.cancelBubble = true;
+//     }
+//     function fnEnd(ev){
+//       oWrap.removeEventListener('touchmove',fnMove,false);
+//       oWrap.removeEventListener('touchend' ,fnEnd,false);
+//       // console.log(y);
+//       var upY = ev.changedTouches[0].pageY;
+//       if(Math.abs(upY-startY)>space){
+//         if(startY>upY){//开始>结束
+//           iNow++;
+//           if(iNow>=aLi.length)iNow=aLi.length-1;
+//         } else {
+//           iNow--;
+//           if(iNow<=0)iNow=0;
+//         }
+//       }
+//       console.log("iNow="+iNow)
+//       y = -iNow*aLi[0].offsetHeight;
+//       oUl.style.WebkitTransition = '0.6s all ease-out';
+//       oUl.style.WebkitTransform  = 'translateY('+y+'px)';
+//       document.body.scrollTop = 0;
+//     }
+//     oWrap.addEventListener("touchmove",fnMove,false);
+//     oWrap.addEventListener("touchend" ,fnEnd,false);
+//   },false)
+// },false)
 </script>
 
 <script>
