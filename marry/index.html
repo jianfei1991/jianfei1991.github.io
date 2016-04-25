@@ -66,7 +66,7 @@
         <div class="hint2"></div>
       </li>
       <li class="a2">
-        <span class="btn iMap"></span>
+        <span class="btn iMap" id="next"></span>
         <input type="button" class="open" id="open" value="点击查看具体位置">
         <p style="position: absolute;top: 785px;text-align: center;width: 500px;left: 50%;margin-left: -250px;font-size: 23px;    line-height: 40px;">西城区宣武门外大街8号庄胜崇光百货新馆5楼(近宣武门地铁站）</p>
         <a href="tel:13699128353" class="btn bridegroom">新郎电话</a>
@@ -94,7 +94,9 @@ var y = 0,space = 50,iNow = 0;
 var oWrap = document.querySelector(".wrap");
 var oUl   = document.querySelector('.wrap ul');
 var aLi   = oUl.children;
-document.getElementById("open").onclick = function(){
+document.getElementById("open").onclick = nnext;
+document.getElementById("next").onclick = nnext;
+function nnext(){
   iNow = 2;
   y = -iNow*aLi[0].offsetHeight;
   oUl.style.WebkitTransition = '0.6s all ease-out';
