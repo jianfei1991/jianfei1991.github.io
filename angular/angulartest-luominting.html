@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<!-- <body>
+	<div ng-controller="MyController">
+		<h1>hello <span ng-bind="now">1</span> {{now}}</h1>
+	</div>
+
+</body> -->
+<body ng-controller="SpicyCtrl">
+ <button ng-click="chiliSpicy()">Chili</button>
+ <button ng-click="jalapenoSpicy()">Jalape?o</button>
+ <p>The food is {{spice}} spicy!</p>
+</body>
+	<script src="node_modules/angular/lib/angular.min.js"></script>
+	<script>
+  //   var app=angular.module('my-app',[]);
+		// app.controller('MyController',function($scope,$http){//加载执行
+		// 	$scope.now = "123";
+		// })
+	</script>
+	<script>
+		function SpicyCtrl($scope) {
+		 $scope.spice = 'very';
+		 $scope.chiliSpicy = function() {
+		   $scope.spice = 'chili';
+		 }
+		 $scope.jalapenoSpicy = function() {
+		  $scope.spice = 'jalape?o';
+		 }
+		}
+	</script>
+	</html>
