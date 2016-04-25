@@ -28,6 +28,10 @@
 <!-- <{block:bd/wjf_header.tpl}> -->
 <!-- 内含GA、windowOnload(fn)、$$(dom).css({json})、getStyle(obj, name)、move(obj, json, options)->options:{time、type、fn} -->
 <style>
+
+#container{height:1000px;}
+
+
   *{ margin: 0; padding: 0; list-style: none;}
   .hint2 { height: 27px; width: 36px; z-index: 99; position: absolute; left: 50%; margin-left: -14px; opacity: 1; bottom: 55px; -webkit-animation: hint-move 1.2s infinite ease; background: url(http://i2.yongche.name/media/g1/M01/07/02/rBEARFacwFqIW3VMAAAG7nq_zqIAACzSgP_-PoAAAcG905.png?1453059720) no-repeat center bottom; background-size: 100% auto; }
   @-webkit-keyframes hint-move { 
@@ -42,17 +46,20 @@
   :-ms-input-placeholder { /* Internet Explorer 10+ */color: #ff9c5a;}
   .a1{ background: url(./images/m1.jpg) no-repeat;}
   .a2{ background: url(./images/m2.jpg) no-repeat;}
+  .a3{ background: url(./images/m3.jpg) no-repeat;}
+  .a4{ background: url(./images/m4.jpg) no-repeat;}
 
   html{ font-size: 20px;}
   .wrap{}
   .wrap ul li{width: 750px; height: 1218px; position: relative;}
   .btn{background: url(./images/btn.png);}
   .iMap{position:absolute;height: 270px;width: 450px;left: 50%;margin-left: -225px;top: 400px;display: block;}
-  .open{position: absolute;top: 730px;text-align: center;background: none;text-decoration: underline;left: 50%;margin-left: -4em;font-size: 25px;}
+  .open{position: absolute;top: 730px;text-align: center;background: none;text-decoration: underline;left: 50%;margin-left: -4em;font-size: 25px;border:none;}
   a.btn{height: 100px;width: 400px;position: absolute;left: 50%;margin-left: -200px; background-position: 0 -300px;line-height: 95px;text-align:center;text-decoration: none;color: #3f3f3f;font-size: 37px;font-weight: 900;}
-  .bridegroom{top: 950px;}
-  .bride{top: 1090px;}
+  .bridegroom{top: 900px;}
+  .bride{top: 1020px;}
 </style>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=2mwtdXnkn8nG4WhSFRTzZAPYDKsWz4i2"></script>
 </head>
 <script src="http://i2.yongche.name/js/jquery/jquery-1.8.3.min.js?1456255560"></script>
 <script src="http://i3.yongche.name/js/app/i/weixin/js-api.min.js?1456686600"></script>
@@ -66,13 +73,33 @@
       <li class="a2">
         <span class="btn iMap"></span>
         <input type="button" class="open" id="open" value="点击查看具体位置">
-        <p style="position: absolute;top: 785px;text-align: center;width: 500px;left: 50%;margin-left: -250px;font-size: 23px;">西城区宣武门外大街8号庄胜崇光百货新馆5楼(近宣武门地铁站）</p>
+        <p style="position: absolute;top: 785px;text-align: center;width: 500px;left: 50%;margin-left: -250px;font-size: 23px;    line-height: 40px;">西城区宣武门外大街8号庄胜崇光百货新馆5楼(近宣武门地铁站）</p>
         <a href="tel:123" class="btn bridegroom">新郎电话</a>
         <a href="tel:123" class="btn bride">新娘电话</a>
+        <div class="hint2"></div>
+      </li>
+      <li class="a3">
+        <div class="hint2"></div>
+      </li>
+      <li class="a4">
+        <div id="container"></div>
+        <div class="hint2" style="transform: rotate(180deg);"></div>
       </li>
     </ul>
   </div>
 <iframe frameborder="0" style="display: none;" id="share_iframe"></iframe>
+<script type="text/javascript">
+// var map = new BMap.Map("container");          // 创建地图实例
+// var point = new BMap.Point(116.404, 39.915);  // 创建点坐标
+// map.centerAndZoom(point, 15);                 // 初始化地图，设置中心点坐标和地图级别
+// map.centerAndZoom(new BMap.Point(116.382, 39.903), 18)
+var map = new BMap.Map("container");
+var point = new BMap.Point(116.3818, 39.9034);
+map.centerAndZoom(point, 18);
+var marker = new BMap.Marker(point);        // 创建标注
+map.addOverlay(marker);
+
+</script>
 <script>
 function $$(dom){
   return document.querySelector(dom);
