@@ -34,7 +34,7 @@
 
   *{ margin: 0; padding: 0; list-style: none;}
   .hint2 { height: 27px; width: 36px; z-index: 99; position: absolute; left: 50%; margin-left: -14px; opacity: 1; bottom: 55px; -webkit-animation: hint-move 1.2s infinite ease; background: url(http://i2.yongche.name/media/g1/M01/07/02/rBEARFacwFqIW3VMAAAG7nq_zqIAACzSgP_-PoAAAcG905.png?1453059720) no-repeat center bottom; background-size: 100% auto; }
-  @-webkit-keyframes hint-move { 
+  @-webkit-keyframes hint-move {
       0% { opacity: 0; bottom: 50px; }
      70% { opacity: 1; bottom: 45px; }
     100% { opacity: 0; bottom: 50px; }
@@ -66,10 +66,9 @@
 <body>
 <img id="shareImg" src="" style="position:fixed;left:-100%;" />
   <div class="wrap">
-
-        <div>
+<!--    <div>
           <div id="container"></div>
-        </div>
+        </div> -->
     <ul>
       <li class="a1">
         <div class="hint2"></div>
@@ -105,50 +104,50 @@ function $$(dom){
   return document.querySelector(dom);
 }
 
-// document.addEventListener('DOMContentLoaded', function(){
-//   $("input,textarea,select").bind("blur",function(){
-//     document.body.scrollTop = 0;
-//   })
-//   var oWrap = document.querySelector(".wrap");
-//   var oUl   = document.querySelector('.wrap ul');
-//   var aLi   = oUl.children;
-//   var y = 0,space = 50,iNow = 0;
-//   oWrap.addEventListener('touchstart',function(ev){
-//     document.title = (ev.targetTouches[0].target)
-//     var startY = ev.targetTouches[0].pageY;
-//     var disY = startY - y;
-//     oUl.style.WebkitTransition = 'none';
+document.addEventListener('DOMContentLoaded', function(){
+  $("input,textarea,select").bind("blur",function(){
+    document.body.scrollTop = 0;
+  })
+  var oWrap = document.querySelector(".wrap");
+  var oUl   = document.querySelector('.wrap ul');
+  var aLi   = oUl.children;
+  var y = 0,space = 50,iNow = 0;
+  oWrap.addEventListener('touchstart',function(ev){
+    document.title = (ev.targetTouches[0].target)
+    var startY = ev.targetTouches[0].pageY;
+    var disY = startY - y;
+    oUl.style.WebkitTransition = 'none';
 
-//     function fnMove(ev){
-//       y = ev.targetTouches[0].pageY-disY;
-//       //oUl.style.WebkitTransform = 'translateY('+y+'px)';
-//       ev.preventDefault();
-//       // ev.cancelBubble = true;
-//     }
-//     function fnEnd(ev){
-//       oWrap.removeEventListener('touchmove',fnMove,false);
-//       oWrap.removeEventListener('touchend' ,fnEnd,false);
-//       // console.log(y);
-//       var upY = ev.changedTouches[0].pageY;
-//       if(Math.abs(upY-startY)>space){
-//         if(startY>upY){//开始>结束
-//           iNow++;
-//           if(iNow>=aLi.length)iNow=aLi.length-1;
-//         } else {
-//           iNow--;
-//           if(iNow<=0)iNow=0;
-//         }
-//       }
-//       console.log("iNow="+iNow)
-//       y = -iNow*aLi[0].offsetHeight;
-//       oUl.style.WebkitTransition = '0.6s all ease-out';
-//       oUl.style.WebkitTransform  = 'translateY('+y+'px)';
-//       document.body.scrollTop = 0;
-//     }
-//     oWrap.addEventListener("touchmove",fnMove,false);
-//     oWrap.addEventListener("touchend" ,fnEnd,false);
-//   },false)
-// },false)
+    function fnMove(ev){
+      y = ev.targetTouches[0].pageY-disY;
+      //oUl.style.WebkitTransform = 'translateY('+y+'px)';
+      ev.preventDefault();
+      // ev.cancelBubble = true;
+    }
+    function fnEnd(ev){
+      oWrap.removeEventListener('touchmove',fnMove,false);
+      oWrap.removeEventListener('touchend' ,fnEnd,false);
+      // console.log(y);
+      var upY = ev.changedTouches[0].pageY;
+      if(Math.abs(upY-startY)>space){
+        if(startY>upY){//开始>结束
+          iNow++;
+          if(iNow>=aLi.length)iNow=aLi.length-1;
+        } else {
+          iNow--;
+          if(iNow<=0)iNow=0;
+        }
+      }
+      console.log("iNow="+iNow)
+      y = -iNow*aLi[0].offsetHeight;
+      oUl.style.WebkitTransition = '0.6s all ease-out';
+      oUl.style.WebkitTransform  = 'translateY('+y+'px)';
+      document.body.scrollTop = 0;
+    }
+    oWrap.addEventListener("touchmove",fnMove,false);
+    oWrap.addEventListener("touchend" ,fnEnd,false);
+  },false)
+},false)
 </script>
 
 <script>
