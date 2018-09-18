@@ -149,6 +149,109 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-cookie" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/15/cookie/">cookie</a>
+    </h1>
+  
+
+        
+        <a href="/2017/04/15/cookie/" class="archive-article-date">
+  	<time datetime="2017-04-15T02:55:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="setCookie方法在localhost域名下不能存，在127-0-0-1下确可以存取"><a href="#setCookie方法在localhost域名下不能存，在127-0-0-1下确可以存取" class="headerlink" title="setCookie方法在localhost域名下不能存，在127.0.0.1下确可以存取"></a>setCookie方法在localhost域名下不能存，在127.0.0.1下确可以存取</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">something that wasn&apos;t made clear to me here and totally confused me for a while was that domain</span><br><span class="line"></span><br><span class="line">names must contain at least two dots (.),</span><br><span class="line"></span><br><span class="line">hence &apos;localhost&apos; is invalid and the browser will refuse to set the cookie!</span><br><span class="line"></span><br><span class="line">instead for localhost you should use false.</span><br><span class="line"></span><br><span class="line">to make your code work on both localhost and a proper domain, you can do this:</span><br></pre></td></tr></table></figure>
+<h2 id="解决方案一：-localhost指向127-0-0-1"><a href="#解决方案一：-localhost指向127-0-0-1" class="headerlink" title="解决方案一： localhost指向127.0.0.1"></a>解决方案一： localhost指向127.0.0.1</h2><h2 id="解决方案二：-改hosts"><a href="#解决方案二：-改hosts" class="headerlink" title="解决方案二： 改hosts"></a>解决方案二： 改hosts</h2><h2 id="三：php解决方案（网上搜的，看不明白php还。。。。）"><a href="#三：php解决方案（网上搜的，看不明白php还。。。。）" class="headerlink" title="三：php解决方案（网上搜的，看不明白php还。。。。）"></a>三：php解决方案（网上搜的，看不明白php还。。。。）</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php  </span><br><span class="line">$domain = ($_SERVER[&apos;HTTP_HOST&apos;] != &apos;localhost&apos;) ? $_SERVER[&apos;HTTP_HOST&apos;] : false;  </span><br><span class="line">setcookie(&apos;cookiename&apos;, &apos;data&apos;, time()+60*60*24*365, &apos;/&apos;, $domain, false);  </span><br><span class="line">?&gt;</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/04/15/cookie/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-package-json" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/18/package-json/">package.json</a>
+    </h1>
+  
+
+        
+        <a href="/2017/03/18/package-json/" class="archive-article-date">
+  	<time datetime="2017-03-18T07:20:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="–save-dev-amp-amp-–save"><a href="#–save-dev-amp-amp-–save" class="headerlink" title="–save-dev &amp;&amp; –save"></a>–save-dev &amp;&amp; –save</h3><p>package.json 中有dependencies和devDependencies<br><br>dependencies是用在开发完上线模式的，<br><br>devDependencies是用在开发模式<br></p>
+<h3 id="依赖的版本控制"><a href="#依赖的版本控制" class="headerlink" title="依赖的版本控制"></a>依赖的版本控制</h3><p>  有的时候看到package.json中安装的模块版本号前面有一个波浪线。例如: ~1.2.3 这里表示安装1.2.x以上版本。但是不安装1.3以上。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/03/18/package-json/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-transition的坑" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -470,118 +573,9 @@
 
 
   
-    <article id="post-markdown入门" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/03/markdown入门/">markdown入门</a>
-    </h1>
-  
-
-        
-        <a href="/2017/01/03/markdown入门/" class="archive-article-date">
-  	<time datetime="2017-01-03T08:44:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Markdown 是一种轻量级的「标记语言」，它的优点很多，目前也被越来越多的写作爱好者，撰稿者广泛使用。看到这里请不要被「标记」、「语言」所迷惑，Markdown 的语法十分简单。常用的标记符号也不超过十个，这种相对于更为复杂的HTML 标记语言来说，Markdown 可谓是十分轻量的，学习成本也不需要太多，且一旦熟悉这种语法规则，会有一劳永逸的效果。<br><br></p>
-<h4 id="“-“-代表强制换行或者“两个空格加回车”"><a href="#“-“-代表强制换行或者“两个空格加回车”" class="headerlink" title="“\“  代表强制换行或者“两个空格加回车”"></a>“\<br>“  代表强制换行或者“两个空格加回车”</h4>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/01/03/markdown入门/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-hexo介绍" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/03/hexo介绍/">hexo介绍</a>
-    </h1>
-  
-
-        
-        <a href="/2017/01/03/hexo介绍/" class="archive-article-date">
-  	<time datetime="2017-01-03T08:43:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p><a href="https://www.kancloud.cn/wizardforcel/hexo-doc/101374" target="_blank" rel="noopener">https://www.kancloud.cn/wizardforcel/hexo-doc/101374</a></p>
-</blockquote>
-<ul>
-<li><p>需要安装Node.js、Git</p>
-</li>
-<li><p>hexo init <folder> //进行初始化会自动生成下面这样的目录结构</folder></p></li></ul>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/01/03/hexo介绍/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
     </nav>
   
 
