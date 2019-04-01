@@ -149,36 +149,75 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-git相关操作" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-todo" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/18/git相关操作/">git相关操作</a>
+      <a class="article-title" href="/2018/09/06/todo/">todo</a>
     </h1>
   
 
         
-        <a href="/2018/04/18/git相关操作/" class="archive-article-date">
-  	<time datetime="2018-04-18T07:05:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-18</time>
+        <a href="/2018/09/06/todo/" class="archive-article-date">
+  	<time datetime="2018-09-05T16:02:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-06</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="git-对比两个分支差异"><a href="#git-对比两个分支差异" class="headerlink" title="git 对比两个分支差异"></a>git 对比两个分支差异</h2><ul>
-<li><a href="https://blog.csdn.net/u011240877/article/details/52586664" target="_blank" rel="noopener">git 对比两个分支差异</a></li>
-</ul>
-<h2 id="git-小游戏"><a href="#git-小游戏" class="headerlink" title="git 小游戏"></a>git 小游戏</h2><ul>
-<li><a href="https://www.jianshu.com/p/482b32716bbe" target="_blank" rel="noopener">githug</a></li>
-</ul>
-<h2 id="git学习笔记"><a href="#git学习笔记" class="headerlink" title="git学习笔记"></a>git学习笔记</h2><ul>
-<li><a href="https://www.cnblogs.com/wufangfang/p/6086239.html" target="_blank" rel="noopener">git tag相关</a></li>
-<li><a href="https://www.cnblogs.com/bellkosmos/p/5923439.html" target="_blank" rel="noopener">更改git log展示</a></li>
-</ul>
+        <h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>Sublime CMD+shift+P  install   PlainTasks</p>
+<h3 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h3><table>
+<thead>
+<tr>
+<th style="text-align:left">快捷键</th>
+<th style="text-align:left">备注</th>
+<th style="text-align:left">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">CMD+shif+p</td>
+<td style="text-align:left">输入tasks: New document</td>
+<td style="text-align:left">创建新文档</td>
+</tr>
+<tr>
+<td style="text-align:left">CMD+i</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">创建新的task</td>
+</tr>
+<tr>
+<td style="text-align:left">ctrl+c</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">取消task</td>
+</tr>
+<tr>
+<td style="text-align:left">CMD+d</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">完成</td>
+</tr>
+<tr>
+<td style="text-align:left">CMD+shift+a</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">归档</td>
+</tr>
+<tr>
+<td style="text-align:left">–tab</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">漂亮的分割线</td>
+</tr>
+<tr>
+<td style="text-align:left">CMD+shift+p   输入Tasks: Copy Statistics</td>
+<td style="text-align:left">在文本中粘贴即可显示你的任务完成度</td>
+<td style="text-align:left">生成统计</td>
+</tr>
+</tbody>
+</table>
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>如果遇到不能显示的字符，可以在配置文件中修改，进度条可以在用户配置文件中加入：</p>
+<p>“bar_full”: “■”, // any char<br>“bar_empty”: “☐”, // any char<br>// if you want to avoid Unicode when copy stats — you can define replacements<br>// e.g. to convert ■■■■■■☐☐☐☐ to [====== ]<br>“replace_stats_chars”: [[“ ■”, “ [=”], [“■”, “=”], [“☐ “, “ ] “], [“☐”, “ “]]<br>}<br>任务的轻重缓急等设置<br>c tab —— @critical，用于标注任务重要程序，表示极重要的<br>h tab —— @high，用于标注任务重要程序<br>l tab —— @low，用于标注任务重要程序<br>s tab —— @started ，再按tab键就会插入当前时间，这样当你完成任务时可以知道耗时多少<br>d tab —— @due() 设置任务期限，格式为@due(year-month-day hour:minute)，以下内容再输入tab即可扩充为这个格式。<br>@due(+) —— 明天，同@due( +1) 和 @due( +1d)<br>@due(+w) —— 一周，同@(due +1)。另外+3w就表示三周<br>@due(+2:) —— 两小时<br>@due(+:45) —— 45分钟<br>@due(+2 12:) —— 两天十二小时<br>@due(1) —— 下个月一号<br>@due(5) —— 这个月或者下个月5号，是这个月还是下个月取决当前日期是否大于5<br>@due(2-3) —— 今年或明年2月3号，取决于当前日期是否大于2月3号<br>@due(25 23:) —— 这个月或下个月25号，23时，分钟等于当前的分钟<br>@due(16.1.1 1:1) —— 等于@due(16-01-01 01:01)</p>
 
       
 
@@ -191,7 +230,266 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/04/18/git相关操作/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/09/06/todo/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-函数式编程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/22/函数式编程/">函数式编程</a>
+    </h1>
+  
+
+        
+        <a href="/2018/08/22/函数式编程/" class="archive-article-date">
+  	<time datetime="2018-08-22T15:38:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><h4 id="函数式编程思维"><a href="#函数式编程思维" class="headerlink" title="函数式编程思维"></a>函数式编程思维</h4></li>
+<li><h4 id="函数式编程常用核心概念"><a href="#函数式编程常用核心概念" class="headerlink" title="函数式编程常用核心概念"></a>函数式编程常用核心概念</h4></li>
+<li><h4 id="当下函数式编程最热的库"><a href="#当下函数式编程最热的库" class="headerlink" title="当下函数式编程最热的库"></a>当下函数式编程最热的库</h4></li>
+<li><h4 id="函数式编程的实际应用场景"><a href="#函数式编程的实际应用场景" class="headerlink" title="函数式编程的实际应用场景"></a>函数式编程的实际应用场景</h4></li>
+</ul>
+<h2 id="函数式编程思维-1"><a href="#函数式编程思维-1" class="headerlink" title="函数式编程思维"></a>函数式编程思维</h2><p><strong><em>是一门复杂的数学思想</em></strong></p>
+<ol>
+<li>函数是”第一等公民”</li>
+<li>只用”表达式”，不用”语句”</li>
+<li>没有”副作用”</li>
+<li>不修改状态</li>
+<li>引用透明（函数运行只靠参数）</li>
+</ol>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/08/22/函数式编程/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-ASCII、Unicode和UTF-8编码的区别" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/17/ASCII、Unicode和UTF-8编码的区别/">ASCII、Unicode和UTF-8编码的区别</a>
+    </h1>
+  
+
+        
+        <a href="/2018/08/17/ASCII、Unicode和UTF-8编码的区别/" class="archive-article-date">
+  	<time datetime="2018-08-17T08:07:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <table>
+<thead>
+<tr>
+<th style="text-align:left">编码</th>
+<th style="text-align:left">大小</th>
+<th style="text-align:left">支持语言</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">ASCII</td>
+<td style="text-align:left">1个字节</td>
+<td style="text-align:left">英文</td>
+</tr>
+<tr>
+<td style="text-align:left">Unicode</td>
+<td style="text-align:left">2个字节（生僻字4个）</td>
+<td style="text-align:left">所有语言</td>
+</tr>
+<tr>
+<td style="text-align:left">UTF-8</td>
+<td style="text-align:left">1-6个字节，英文字母1个字节，汉字3个字节，生僻字4-6个字节</td>
+<td style="text-align:left">所有语言</td>
+</tr>
+</tbody>
+</table>
+<h4 id="具体解释："><a href="#具体解释：" class="headerlink" title="具体解释："></a><strong>具体解释</strong>：</h4><p>最早只有127个字母被编码到计算机里，也就是大小写英文字母、数字和一些符号，这个编码表被称为ASCII编码，比如大写字母A的编码是65，小写字母z的编码是122。</p>
+<p>但是要处理中文显然一个字节是不够的，至少需要两个字节，而且还不能和ASCII编码冲突，所以，中国制定了GB2312编码，用来把中文编进去。</p>
+<p>你可以想得到的是，全世界有上百种语言，日本把日文编到Shift_JIS里，韩国把韩文编到Euc-kr里，各国有各国的标准，就会不可避免地出现冲突，结果就是，在多语言混合的文本中，显示出来会有乱码。</p>
+<p>因此，Unicode应运而生。Unicode把所有语言都统一到一套编码里，这样就不会再有乱码问题了。</p>
+<p>Unicode标准也在不断发展，但最常用的是用两个字节表示一个字符（如果要用到非常偏僻的字符，就需要4个字节）。现代操作系统和大多数编程语言都直接支持Unicode。</p>
+<p>新的问题又出现了：如果统一成Unicode编码，乱码问题从此消失了。但是，如果你写的文本基本上全部是英文的话，用Unicode编码比ASCII编码需要多一倍的存储空间，在存储和传输上就十分不划算。</p>
+<p>所以，本着节约的精神，又出现了把Unicode编码转化为“可变长编码”的UTF-8编码。UTF-8编码把一个Unicode字符根据不同的数字大小编码成1-6个字节，常用的英文字母被编码成1个字节，汉字通常是3个字节，只有很生僻的字符才会被编码成4-6个字节。如果你要传输的文本包含大量英文字符，用UTF-8编码就能节省空间。</p>
+<p>UTF-8编码有一个额外的好处，就是ASCII编码实际上可以被看成是UTF-8编码的一部分，所以，大量只支持ASCII编码的历史遗留软件可以在UTF-8编码下继续工作。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/08/17/ASCII、Unicode和UTF-8编码的区别/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-HTTP-Cache-Control" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/08/09/HTTP-Cache-Control/">HTTP Cache-Control</a>
+    </h1>
+  
+
+        
+        <a href="/2018/08/09/HTTP-Cache-Control/" class="archive-article-date">
+  	<time datetime="2018-08-09T07:49:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Cache-Control指定了请求和响应遵循的缓存机制。好的缓存机制可以减少对网络带宽的占用，可以提高访问速度，提高用户的体验，还可以减轻服务器的负担。</p>
+<p><a href="https://www.cnblogs.com/chinajava/p/5705169.html" target="_blank" rel="noopener">https://www.cnblogs.com/chinajava/p/5705169.html</a></p>
+<h4 id="no-cache和no-store的区别"><a href="#no-cache和no-store的区别" class="headerlink" title="no-cache和no-store的区别"></a>no-cache和no-store的区别</h4><p>网上有好多关于no-cache和no-store的区别，但是长篇大论，感觉也没有怎么讲清楚。</p>
+<p>最近看了《图解HTTP》这本书，书上讲到了这两者的区别：</p>
+<p>no-cache从字面意义上很容易误解为不缓存，但是no-cache代表不缓存过期的资源，缓存会向服务器进行有效处理确认之后处理资源，更确切的说，no-cache应该是</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">do-not-serve-from-cache-without-revalidation</span><br></pre></td></tr></table></figure>
+<p>而no-store才是真正的不进行缓存。</p>
+<p>使用no-cache的目的就是为了防止从缓存中获取过期的资源。</p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/08/09/HTTP-Cache-Control/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-Sublime-入门" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/07/18/Sublime-入门/">Sublime 入门</a>
+    </h1>
+  
+
+        
+        <a href="/2018/07/18/Sublime-入门/" class="archive-article-date">
+  	<time datetime="2018-07-18T13:20:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Theme:  <a href="https://github.com/equinusocio/material-theme" target="_blank" rel="noopener">https://github.com/equinusocio/material-theme</a><br>– CMD+,<br>    “color_scheme”: “Packages/Material Theme/schemes/Material-Theme.tmTheme”,</p>
+<pre><code>&quot;theme&quot;: &quot;Material-Theme.sublime-theme&quot;,
+</code></pre><p>–</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/07/18/Sublime-入门/">展开全文 >></a>
         </p>
       
 
@@ -385,228 +683,6 @@ coords.push(coord);
 
 
   
-    <article id="post-面试题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/18/面试题/">面试题</a>
-    </h1>
-  
-
-        
-        <a href="/2017/07/18/面试题/" class="archive-article-date">
-  	<time datetime="2017-07-18T09:39:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="美团-2017年07月20日"><a href="#美团-2017年07月20日" class="headerlink" title="美团 2017年07月20日"></a>美团 2017年07月20日</h1><h3 id="css3（动画、flex"><a href="#css3（动画、flex" class="headerlink" title="css3（动画、flex)"></a>css3（动画、flex)</h3><h3 id="标签上下绝对剧中的几种方法"><a href="#标签上下绝对剧中的几种方法" class="headerlink" title="标签上下绝对剧中的几种方法"></a>标签上下绝对剧中的几种方法</h3><h3 id="css盒模型-box-sizing"><a href="#css盒模型-box-sizing" class="headerlink" title="css盒模型 box-sizing"></a>css盒模型 box-sizing</h3><h3 id="get-post区别"><a href="#get-post区别" class="headerlink" title="get post区别"></a>get post区别</h3>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/18/面试题/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-关于跨域" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/24/关于跨域/">关于跨域</a>
-    </h1>
-  
-
-        
-        <a href="/2017/05/24/关于跨域/" class="archive-article-date">
-  	<time datetime="2017-05-24T10:17:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p><a href="https://mp.weixin.qq.com/s?__biz=MzAxODE2MjM1MA==&amp;mid=2651552209&amp;idx=1&amp;sn=23eec5e98c4c9bed2417e78bfc57e320" target="_blank" rel="noopener">https://mp.weixin.qq.com/s?__biz=MzAxODE2MjM1MA==&amp;mid=2651552209&amp;idx=1&amp;sn=23eec5e98c4c9bed2417e78bfc57e320</a></p>
-</blockquote>
-<blockquote>
-<p><a href="http://www.ruanyifeng.com/blog/2012/09/xmlhttprequest_level_2.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2012/09/xmlhttprequest_level_2.html</a></p>
-</blockquote>
-<p>十、阅读材料<br>　　1. Introduction to XMLHttpRequest Level 2： 新功能的综合介绍。<br>　　2. New Tricks in XMLHttpRequest 2：一些用法的介绍。<br>　　3. Using XMLHttpRequest：一些高级用法，主要针对Firefox浏览器。<br>　　4. <a href="https://dev.opera.com/articles/dom-access-control-using-cors/" target="_blank" rel="noopener">HTTP Access Control：CORS综述。 </a><br>　　5. DOM access control using cross-origin resource sharing：CORS的9种HTTP头信息<br>　　6. Server-Side Access Control：服务器端CORS设置。<br>　　7. Enable CORS：服务端CORS设置。</p>
-<h3 id="报错"><a href="#报错" class="headerlink" title="报错"></a>报错</h3><p>XMLHttpRequest cannot load <a href="https://testapi.shouqiev.com/activity/ImageFromGLByJsonp.json" target="_blank" rel="noopener">https://testapi.shouqiev.com/activity/ImageFromGLByJsonp.json</a>. No ‘Access-Control-Allow-Origin’ header is present on the requested resource. Origin ‘<a href="https://mail.qq.com&#39;" target="_blank" rel="noopener">https://mail.qq.com&#39;</a> is therefore not allowed access.</p>
-<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p><a href="http://www.qq.com/" target="_blank" rel="noopener">http://www.qq.com/</a> 访问 <a href="http://testapi.shouqiev.com/activity/ImageFromGLByJsonp.json" target="_blank" rel="noopener">http://testapi.shouqiev.com/activity/ImageFromGLByJsonp.json</a> 跑通 无报错<br><a href="http://www.qq.com/" target="_blank" rel="noopener">http://www.qq.com/</a> 访问 <a href="https://testapi.shouqiev.com/activity/ImageFromGLByJsonp.json" target="_blank" rel="noopener">https://testapi.shouqiev.com/activity/ImageFromGLByJsonp.json</a> 跑通 报错 返回值不能用<br>https 访问 https (二级域名跨域) 跑通报错<br>https 访问 https (二级域名跨域) 跑通报错</p>
-<h1 id="阅读材料-4-CORS综述"><a href="#阅读材料-4-CORS综述" class="headerlink" title="阅读材料-4 CORS综述"></a>阅读材料-4 CORS综述</h1><h2 id="Introduction-介绍"><a href="#Introduction-介绍" class="headerlink" title="Introduction 介绍"></a>Introduction 介绍</h2><p>Same-origin policies are a central security concept of modern browsers. In a web context, they prevent a script hosted at one origin — meaning the same protocol, domain name, and port — from reading from or writing to the DOM of another.</p>
-<p>相同的原产地政策是现代浏览器的核心安全理念。在Web上下文中，它们防止从一个来源托管的脚本，意思是相同的协议、域名和端口。</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/05/24/关于跨域/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-多SSH-key的管理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/05/18/多SSH-key的管理/">多SSH key的管理</a>
-    </h1>
-  
-
-        
-        <a href="/2017/05/18/多SSH-key的管理/" class="archive-article-date">
-  	<time datetime="2017-05-18T09:48:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-05-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>| <a href="https://www.zybuluo.com/yangfch3/note/172120" target="_blank" rel="noopener">https://www.zybuluo.com/yangfch3/note/172120</a></p>
-<h2 id="ssh-keygen命令"><a href="#ssh-keygen命令" class="headerlink" title="ssh-keygen命令"></a>ssh-keygen命令</h2><h3 id="ssh-keygen命令用于为“ssh”生成、管理和转换认证密钥，它支持RSA和DSA两种认证密钥。"><a href="#ssh-keygen命令用于为“ssh”生成、管理和转换认证密钥，它支持RSA和DSA两种认证密钥。" class="headerlink" title="ssh-keygen命令用于为“ssh”生成、管理和转换认证密钥，它支持RSA和DSA两种认证密钥。"></a>ssh-keygen命令用于为“ssh”生成、管理和转换认证密钥，它支持RSA和DSA两种认证密钥。</h3><p>-b：指定密钥长度；<br>-e：读取openssh的私钥或者公钥文件；<br>-C：添加注释；<br>-f：指定用来保存密钥的文件名；<br>-i：读取未加密的ssh-v2兼容的私钥/公钥文件，然后在标准输出设备上显示openssh兼容的私钥/公钥；<br>-l：显示公钥文件的指纹数据；<br>-N：提供一个新密语；<br>-P：提供（旧）密语；<br>-q：静默模式；<br>-t：指定要创建的密钥类型。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/05/18/多SSH-key的管理/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-mysql" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/15/mysql/">mysql</a>
-    </h1>
-  
-
-        
-        <a href="/2017/04/15/mysql/" class="archive-article-date">
-  	<time datetime="2017-04-15T04:25:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="使用MySQL数据库"><a href="#使用MySQL数据库" class="headerlink" title="使用MySQL数据库"></a>使用MySQL数据库</h1><pre><code>登录
-    MySQL运行时 可以通过命令行 mysql -h 主机名 -u 用户名 -p
-        -h 制定要登录的主机名，登录当前及其该参数可以省略
-创建一个数据库
-    create database 数据库名[其它选项就]
-    例如：create database samp_db character set gbk;
-    (为了便于在命令提示符下显示中文character set gbk 将数据库字符编码指定为gbk)
-    (创建成功时会得到 Query OK, 1 row affected(0.02 sec) 的响应)
-</code></pre>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/04/15/mysql/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -621,7 +697,7 @@ coords.push(coord);
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 Jianfei
+    		&copy; 2019 Jianfei
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten

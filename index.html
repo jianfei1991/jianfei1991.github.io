@@ -205,6 +205,298 @@
 
 
   
+    <article id="post-git相关操作" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/25/git相关操作/">git相关操作</a>
+    </h1>
+  
+
+        
+        <a href="/2019/03/25/git相关操作/" class="archive-article-date">
+  	<time datetime="2019-03-25T07:05:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="git-对比两个分支差异"><a href="#git-对比两个分支差异" class="headerlink" title="git 对比两个分支差异"></a>git 对比两个分支差异</h2><ul>
+<li><a href="https://blog.csdn.net/u011240877/article/details/52586664" target="_blank" rel="noopener">git 对比两个分支差异</a></li>
+</ul>
+<h2 id="git-小游戏"><a href="#git-小游戏" class="headerlink" title="git 小游戏"></a>git 小游戏</h2><ul>
+<li><a href="https://www.jianshu.com/p/482b32716bbe" target="_blank" rel="noopener">githug</a></li>
+<li><a href="https://learngitbranching.js.org/?demo" target="_blank" rel="noopener">git在线学习</a></li>
+</ul>
+<h2 id="git学习笔记"><a href="#git学习笔记" class="headerlink" title="git学习笔记"></a>git学习笔记</h2><ul>
+<li><a href="https://www.cnblogs.com/wufangfang/p/6086239.html" target="_blank" rel="noopener">git tag相关</a></li>
+<li><a href="https://www.cnblogs.com/bellkosmos/p/5923439.html" target="_blank" rel="noopener">更改git log展示</a></li>
+</ul>
+<h3 id="gitignore-添加已经被跟踪的文件、文件夹"><a href="#gitignore-添加已经被跟踪的文件、文件夹" class="headerlink" title="gitignore 添加已经被跟踪的文件、文件夹"></a>gitignore 添加已经被跟踪的文件、文件夹</h3><ul>
+<li>.gitignore只能忽略那些原来没有被track的文件，如果某些文件已经被纳入了版本管理中，则修改.gitignore是无效的。</li>
+<li>解决方法就是先把本地缓存删除（改变成未track状态），然后再提交:</li>
+<li>git rm -r –cached .</li>
+<li>git add .</li>
+<li>git commit -m ‘update .gitignore’</li>
+</ul>
+<h3 id="实用技巧"><a href="#实用技巧" class="headerlink" title="实用技巧"></a>实用技巧</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>查询a.vue文件的提交历史记录</span><br><span class="line">git log --stat | grep -B 6 a.vue  </span><br><span class="line"></span><br><span class="line"><span class="meta">#</span># git log 配置</span><br><span class="line">git config --global alias.lm  "log --no-merges --color --date=format:'%Y-%m-%d %H:%M:%S' --author='你的名字！自己修改！' --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Cblue %s %Cgreen(%cd) %C(bold blue)&lt;%an&gt;%Creset' --abbrev-commit"</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">git config --global alias.lms  "log --no-merges --color --stat --date=format:'%Y-%m-%d %H:%M:%S' --author='你的名字！自己修改！' --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Cblue %s %Cgreen(%cd) %C(bold blue)&lt;%an&gt;%Creset' --abbrev-commit"</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">git config --global alias.ls "log --no-merges --color --graph --date=format:'%Y-%m-%d %H:%M:%S' --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Cblue %s %Cgreen(%cd) %C(bold blue)&lt;%an&gt;%Creset' --abbrev-commit"</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">git config --global alias.lss "log --no-merges --color --stat --graph --date=format:'%Y-%m-%d %H:%M:%S' --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Cblue %s %Cgreen(%cd) %C(bold blue)&lt;%an&gt;%Creset' --abbrev-commit"</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/03/25/git相关操作/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-webpack踩坑记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/04/webpack踩坑记/">webpack踩坑记</a>
+    </h1>
+  
+
+        
+        <a href="/2018/11/04/webpack踩坑记/" class="archive-article-date">
+  	<time datetime="2018-11-03T18:30:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h4><p>项目中的某个依赖包引用了base58,base58引用了base-x</p>
+<pre><code>&quot;bs58&quot;: {
+  &quot;version&quot;: &quot;4.0.1&quot;,
+  &quot;resolved&quot;: &quot;https://registry.npmjs.org/bs58/-/bs58-4.0.1.tgz&quot;,
+  &quot;integrity&quot;: &quot;sha1-vhYedsNU9veIrkBx9j806MTwpCo=&quot;,
+  &quot;requires&quot;: {
+    &quot;base-x&quot;: &quot;^3.0.2&quot;
+  }
+},
+
+&quot;base-x&quot;: {
+      &quot;version&quot;: &quot;3.0.5&quot;,
+      &quot;resolved&quot;: &quot;https://registry.npmjs.org/base-x/-/base-x-3.0.5.tgz&quot;,
+      &quot;integrity&quot;: &quot;sha512-C3picSgzPSLE+jW3tcBzJoGwitOtazb5B+5YmAxZm2ybmTi9LNgAtDO/jjVEBZwHoXmDBZ9m/IELj3elJVRBcA==&quot;,
+      &quot;requires&quot;: {
+        &quot;safe-buffer&quot;: &quot;^5.0.1&quot;
+      }
+    }
+</code></pre><p>突然有一天base-x升级到了3.0.5后，项目编译代码中base-x部分 编译出的为es6</p>
+<p>思路一：通过package.json把base-x固定在3.0.2</p>
+<p>思路二：把编译后的dist目录通过gulp等手段再次编译为es5<br>思路三：通过polifile</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/11/04/webpack踩坑记/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-Object构造函数的方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><h2 id="Object构造函数的方法"><a href="#Object构造函数的方法" class="headerlink" title="Object构造函数的方法"></a><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object#Methods" target="_blank" rel="noopener"><code>Object</code>构造函数的方法</a></h2><ul>
+<li><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/assign" target="_blank" rel="noopener"><code>Object.assign()</code></a></p>
+<p>通过复制一个或多个对象来创建一个新的对象。</p>
+</li>
+<li><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/create" target="_blank" rel="noopener"><code>Object.create()</code></a></p>
+<p>使用指定的原型对象和属性创建一个新对象。</p>
+</li>
+<li><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty" target="_blank" rel="noopener"><code>Object.defineProperty()</code></a></p>
+<p>给对象添加一个属性并指定该属性的配置。</p>
+</li>
+<li><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperties" target="_blank" rel="noopener"><code>Object.defineProperties()</code></a></p>
+<p>给对象添加多个属性并分别指定它们的配置。</p></li></ul></li></ul>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/10/27/Object构造函数的方法/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-nginx技术分享" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/23/nginx技术分享/">linux &amp;&amp; nginx技术分享</a>
+    </h1>
+  
+
+        
+        <a href="/2018/10/23/nginx技术分享/" class="archive-article-date">
+  	<time datetime="2018-10-23T05:16:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="技术分享背景"><a href="#技术分享背景" class="headerlink" title="技术分享背景"></a>技术分享背景</h3><p>​    前端开发人员成长的必经之路</p>
+<p>​    与运维合作更顺畅</p>
+<p>​    在业务场景下，可以想到ngixn等解决方案，找ops帮忙解决</p>
+<h3 id="前端开发可以用nginx做什么"><a href="#前端开发可以用nginx做什么" class="headerlink" title="前端开发可以用nginx做什么"></a>前端开发可以用nginx做什么</h3>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/10/23/nginx技术分享/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-性能优化" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/10/05/性能优化/">性能优化</a>
+    </h1>
+  
+
+        
+        <a href="/2018/10/05/性能优化/" class="archive-article-date">
+  	<time datetime="2018-10-05T12:11:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-10-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/10/05/性能优化/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-linux常用命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -307,10 +599,8 @@
 <p>Nginx -t 测试配置文件是否有问题</p>
 <p>nginx -s reload 重启nginx</p>
 <p>Ps -ef | grep nginx 查找进程中是否有启动的nginx</p>
-<p>lsof -i:80 查看占用80端口的进程</p>
-<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p>/conf/nginx.conf</p>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">#user  nobody;</span></span><br><span class="line"><span class="attribute">worker_processes</span>  <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">#error_log  logs/error.log;</span></span><br><span class="line"><span class="comment">#error_log  logs/error.log  notice;</span></span><br><span class="line"><span class="comment">#error_log  logs/error.log  info;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#pid        logs/nginx.pid;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="section">events</span> &#123;</span><br><span class="line">    <span class="attribute">worker_connections</span>  <span class="number">1024</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="section">http</span> &#123;</span><br><span class="line">    <span class="attribute">include</span>       mime.types;</span><br><span class="line">    <span class="attribute">default_type</span>  application/octet-stream;</span><br><span class="line"></span><br><span class="line">    <span class="comment">#log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '</span></span><br><span class="line">    <span class="comment">#                  '$status $body_bytes_sent "$http_referer" '</span></span><br><span class="line">    <span class="comment">#                  '"$http_user_agent" "$http_x_forwarded_for"';</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">#access_log  logs/access.log  main;</span></span><br><span class="line"></span><br><span class="line">    <span class="attribute">sendfile</span>        <span class="literal">on</span>;</span><br><span class="line">    <span class="comment">#tcp_nopush     on;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">#keepalive_timeout  0;</span></span><br><span class="line">    <span class="attribute">keepalive_timeout</span>  <span class="number">65</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">#gzip  on;</span></span><br><span class="line"></span><br><span class="line">    <span class="section">server</span> &#123;</span><br><span class="line">        <span class="attribute">listen</span>       <span class="number">80</span>;</span><br><span class="line">        <span class="attribute">server_name</span>  localhost;</span><br><span class="line"></span><br><span class="line">        <span class="comment">#charset koi8-r;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">#access_log  logs/host.access.log  main;</span></span><br><span class="line"></span><br><span class="line">        <span class="attribute">location</span> / &#123;</span><br><span class="line">            <span class="attribute">root</span>   html;</span><br><span class="line">            <span class="attribute">index</span>  index.html index.htm;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">#error_page  404              /404.html;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># redirect server error pages to the static page /50x.html</span></span><br><span class="line">        <span class="comment">#</span></span><br><span class="line">        <span class="attribute">error_page</span>   <span class="number">500</span> <span class="number">502</span> <span class="number">503</span> <span class="number">504</span>  /50x.html;</span><br><span class="line">        <span class="attribute">location</span> = /50x.html &#123;</span><br><span class="line">            <span class="attribute">root</span>   html;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment"># proxy the PHP scripts to Apache listening on 127.0.0.1:80</span></span><br><span class="line">        <span class="comment">#</span></span><br><span class="line">        <span class="comment">#location ~ \.php$ &#123;</span></span><br><span class="line">        <span class="comment">#    proxy_pass   http://127.0.0.1;</span></span><br><span class="line">        <span class="comment">#&#125;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000</span></span><br><span class="line">        <span class="comment">#</span></span><br><span class="line">        <span class="comment">#location ~ \.php$ &#123;</span></span><br><span class="line">        <span class="comment">#    root           html;</span></span><br><span class="line">        <span class="comment">#    fastcgi_pass   127.0.0.1:9000;</span></span><br><span class="line">        <span class="comment">#    fastcgi_index  index.php;</span></span><br><span class="line">        <span class="comment">#    fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;</span></span><br><span class="line">        <span class="comment">#    include        fastcgi_params;</span></span><br><span class="line">        <span class="comment">#&#125;</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># deny access to .htaccess files, if Apache's document root</span></span><br><span class="line">        <span class="comment"># concurs with nginx's one</span></span><br><span class="line">        <span class="comment">#</span></span><br><span class="line">        <span class="comment">#location ~ /\.ht &#123;</span></span><br><span class="line">        <span class="comment">#    deny  all;</span></span><br><span class="line">        <span class="comment">#&#125;</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment"># another virtual host using mix of IP-, name-, and port-based configuration</span></span><br><span class="line">    <span class="comment">#</span></span><br><span class="line">    <span class="comment">#server &#123;</span></span><br><span class="line">    <span class="comment">#    listen       8000;</span></span><br><span class="line">    <span class="comment">#    listen       somename:8080;</span></span><br><span class="line">    <span class="comment">#    server_name  somename  alias  another.alias;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">#    location / &#123;</span></span><br><span class="line">    <span class="comment">#        root   html;</span></span><br><span class="line">    <span class="comment">#        index  index.html index.htm;</span></span><br><span class="line">    <span class="comment">#    &#125;</span></span><br><span class="line">    <span class="comment">#&#125;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment"># HTTPS server</span></span><br><span class="line">    <span class="comment">#</span></span><br><span class="line">    <span class="comment">#server &#123;</span></span><br><span class="line">    <span class="comment">#    listen       443 ssl;</span></span><br><span class="line">    <span class="comment">#    server_name  localhost;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">#    ssl_certificate      cert.pem;</span></span><br><span class="line">    <span class="comment">#    ssl_certificate_key  cert.key;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">#    ssl_session_cache    shared:SSL:1m;</span></span><br><span class="line">    <span class="comment">#    ssl_session_timeout  5m;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">#    ssl_ciphers  HIGH:!aNULL:!MD5;</span></span><br><span class="line">    <span class="comment">#    ssl_prefer_server_ciphers  on;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">#    location / &#123;</span></span><br><span class="line">    <span class="comment">#        root   html;</span></span><br><span class="line">    <span class="comment">#        index  index.html index.htm;</span></span><br><span class="line">    <span class="comment">#    &#125;</span></span><br><span class="line">    <span class="comment">#&#125;</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<p>lsof -i:80 查看占用80端口的进程<br></p>
+        
       
 
       
@@ -323,364 +613,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/09/17/nginx/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-todo" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/06/todo/">todo</a>
-    </h1>
-  
-
-        
-        <a href="/2018/09/06/todo/" class="archive-article-date">
-  	<time datetime="2018-09-05T16:02:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>Sublime CMD+shift+P  install   PlainTasks</p>
-<h3 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h3><table>
-<thead>
-<tr>
-<th style="text-align:left">快捷键</th>
-<th style="text-align:left">备注</th>
-<th style="text-align:left">作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">CMD+shif+p</td>
-<td style="text-align:left">输入tasks: New document</td>
-<td style="text-align:left">创建新文档</td>
-</tr>
-<tr>
-<td style="text-align:left">CMD+i</td>
-<td style="text-align:left"></td>
-<td style="text-align:left">创建新的task</td>
-</tr>
-<tr>
-<td style="text-align:left">ctrl+c</td>
-<td style="text-align:left"></td>
-<td style="text-align:left">取消task</td>
-</tr>
-<tr>
-<td style="text-align:left">CMD+d</td>
-<td style="text-align:left"></td>
-<td style="text-align:left">完成</td>
-</tr>
-<tr>
-<td style="text-align:left">CMD+shift+a</td>
-<td style="text-align:left"></td>
-<td style="text-align:left">归档</td>
-</tr>
-<tr>
-<td style="text-align:left">–tab</td>
-<td style="text-align:left"></td>
-<td style="text-align:left">漂亮的分割线</td>
-</tr>
-<tr>
-<td style="text-align:left">CMD+shift+p   输入Tasks: Copy Statistics</td>
-<td style="text-align:left">在文本中粘贴即可显示你的任务完成度</td>
-<td style="text-align:left">生成统计</td>
-</tr>
-</tbody>
-</table>
-<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>如果遇到不能显示的字符，可以在配置文件中修改，进度条可以在用户配置文件中加入：</p>
-<p>“bar_full”: “■”, // any char<br>“bar_empty”: “☐”, // any char<br>// if you want to avoid Unicode when copy stats — you can define replacements<br>// e.g. to convert ■■■■■■☐☐☐☐ to [====== ]<br>“replace_stats_chars”: [[“ ■”, “ [=”], [“■”, “=”], [“☐ “, “ ] “], [“☐”, “ “]]<br>}<br>任务的轻重缓急等设置<br>c tab —— @critical，用于标注任务重要程序，表示极重要的<br>h tab —— @high，用于标注任务重要程序<br>l tab —— @low，用于标注任务重要程序<br>s tab —— @started ，再按tab键就会插入当前时间，这样当你完成任务时可以知道耗时多少<br>d tab —— @due() 设置任务期限，格式为@due(year-month-day hour:minute)，以下内容再输入tab即可扩充为这个格式。<br>@due(+) —— 明天，同@due( +1) 和 @due( +1d)<br>@due(+w) —— 一周，同@(due +1)。另外+3w就表示三周<br>@due(+2:) —— 两小时<br>@due(+:45) —— 45分钟<br>@due(+2 12:) —— 两天十二小时<br>@due(1) —— 下个月一号<br>@due(5) —— 这个月或者下个月5号，是这个月还是下个月取决当前日期是否大于5<br>@due(2-3) —— 今年或明年2月3号，取决于当前日期是否大于2月3号<br>@due(25 23:) —— 这个月或下个月25号，23时，分钟等于当前的分钟<br>@due(16.1.1 1:1) —— 等于@due(16-01-01 01:01)</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/06/todo/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-函数式编程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/22/函数式编程/">函数式编程</a>
-    </h1>
-  
-
-        
-        <a href="/2018/08/22/函数式编程/" class="archive-article-date">
-  	<time datetime="2018-08-22T15:38:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li><h4 id="函数式编程思维"><a href="#函数式编程思维" class="headerlink" title="函数式编程思维"></a>函数式编程思维</h4></li>
-<li><h4 id="函数式编程常用核心概念"><a href="#函数式编程常用核心概念" class="headerlink" title="函数式编程常用核心概念"></a>函数式编程常用核心概念</h4></li>
-<li><h4 id="当下函数式编程最热的库"><a href="#当下函数式编程最热的库" class="headerlink" title="当下函数式编程最热的库"></a>当下函数式编程最热的库</h4></li>
-<li><h4 id="函数式编程的实际应用场景"><a href="#函数式编程的实际应用场景" class="headerlink" title="函数式编程的实际应用场景"></a>函数式编程的实际应用场景</h4></li>
-</ul>
-<h2 id="函数式编程思维-1"><a href="#函数式编程思维-1" class="headerlink" title="函数式编程思维"></a>函数式编程思维</h2><p><strong><em>是一门复杂的数学思想</em></strong></p>
-<ol>
-<li>函数是”第一等公民”</li>
-<li>只用”表达式”，不用”语句”</li>
-<li>没有”副作用”</li>
-<li>不修改状态</li>
-<li>引用透明（函数运行只靠参数）</li>
-</ol>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/08/22/函数式编程/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-ASCII、Unicode和UTF-8编码的区别" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/17/ASCII、Unicode和UTF-8编码的区别/">ASCII、Unicode和UTF-8编码的区别</a>
-    </h1>
-  
-
-        
-        <a href="/2018/08/17/ASCII、Unicode和UTF-8编码的区别/" class="archive-article-date">
-  	<time datetime="2018-08-17T08:07:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <table>
-<thead>
-<tr>
-<th style="text-align:left">编码</th>
-<th style="text-align:left">大小</th>
-<th style="text-align:left">支持语言</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">ASCII</td>
-<td style="text-align:left">1个字节</td>
-<td style="text-align:left">英文</td>
-</tr>
-<tr>
-<td style="text-align:left">Unicode</td>
-<td style="text-align:left">2个字节（生僻字4个）</td>
-<td style="text-align:left">所有语言</td>
-</tr>
-<tr>
-<td style="text-align:left">UTF-8</td>
-<td style="text-align:left">1-6个字节，英文字母1个字节，汉字3个字节，生僻字4-6个字节</td>
-<td style="text-align:left">所有语言</td>
-</tr>
-</tbody>
-</table>
-<h4 id="具体解释："><a href="#具体解释：" class="headerlink" title="具体解释："></a><strong>具体解释</strong>：</h4><p>最早只有127个字母被编码到计算机里，也就是大小写英文字母、数字和一些符号，这个编码表被称为ASCII编码，比如大写字母A的编码是65，小写字母z的编码是122。</p>
-<p>但是要处理中文显然一个字节是不够的，至少需要两个字节，而且还不能和ASCII编码冲突，所以，中国制定了GB2312编码，用来把中文编进去。</p>
-<p>你可以想得到的是，全世界有上百种语言，日本把日文编到Shift_JIS里，韩国把韩文编到Euc-kr里，各国有各国的标准，就会不可避免地出现冲突，结果就是，在多语言混合的文本中，显示出来会有乱码。</p>
-<p>因此，Unicode应运而生。Unicode把所有语言都统一到一套编码里，这样就不会再有乱码问题了。</p>
-<p>Unicode标准也在不断发展，但最常用的是用两个字节表示一个字符（如果要用到非常偏僻的字符，就需要4个字节）。现代操作系统和大多数编程语言都直接支持Unicode。</p>
-<p>新的问题又出现了：如果统一成Unicode编码，乱码问题从此消失了。但是，如果你写的文本基本上全部是英文的话，用Unicode编码比ASCII编码需要多一倍的存储空间，在存储和传输上就十分不划算。</p>
-<p>所以，本着节约的精神，又出现了把Unicode编码转化为“可变长编码”的UTF-8编码。UTF-8编码把一个Unicode字符根据不同的数字大小编码成1-6个字节，常用的英文字母被编码成1个字节，汉字通常是3个字节，只有很生僻的字符才会被编码成4-6个字节。如果你要传输的文本包含大量英文字符，用UTF-8编码就能节省空间。</p>
-<p>UTF-8编码有一个额外的好处，就是ASCII编码实际上可以被看成是UTF-8编码的一部分，所以，大量只支持ASCII编码的历史遗留软件可以在UTF-8编码下继续工作。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/08/17/ASCII、Unicode和UTF-8编码的区别/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-HTTP-Cache-Control" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/08/09/HTTP-Cache-Control/">HTTP Cache-Control</a>
-    </h1>
-  
-
-        
-        <a href="/2018/08/09/HTTP-Cache-Control/" class="archive-article-date">
-  	<time datetime="2018-08-09T07:49:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Cache-Control指定了请求和响应遵循的缓存机制。好的缓存机制可以减少对网络带宽的占用，可以提高访问速度，提高用户的体验，还可以减轻服务器的负担。</p>
-<p><a href="https://www.cnblogs.com/chinajava/p/5705169.html" target="_blank" rel="noopener">https://www.cnblogs.com/chinajava/p/5705169.html</a></p>
-<h4 id="no-cache和no-store的区别"><a href="#no-cache和no-store的区别" class="headerlink" title="no-cache和no-store的区别"></a>no-cache和no-store的区别</h4><p>网上有好多关于no-cache和no-store的区别，但是长篇大论，感觉也没有怎么讲清楚。</p>
-<p>最近看了《图解HTTP》这本书，书上讲到了这两者的区别：</p>
-<p>no-cache从字面意义上很容易误解为不缓存，但是no-cache代表不缓存过期的资源，缓存会向服务器进行有效处理确认之后处理资源，更确切的说，no-cache应该是</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">do-not-serve-from-cache-without-revalidation</span><br></pre></td></tr></table></figure>
-<p>而no-store才是真正的不进行缓存。</p>
-<p>使用no-cache的目的就是为了防止从缓存中获取过期的资源。</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/08/09/HTTP-Cache-Control/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-Sublime-入门" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/18/Sublime-入门/">Sublime 入门</a>
-    </h1>
-  
-
-        
-        <a href="/2018/07/18/Sublime-入门/" class="archive-article-date">
-  	<time datetime="2018-07-18T13:20:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Theme:  <a href="https://github.com/equinusocio/material-theme" target="_blank" rel="noopener">https://github.com/equinusocio/material-theme</a><br>– CMD+,<br>    “color_scheme”: “Packages/Material Theme/schemes/Material-Theme.tmTheme”,</p>
-<pre><code>&quot;theme&quot;: &quot;Material-Theme.sublime-theme&quot;,
-</code></pre><p>–</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/07/18/Sublime-入门/">展开全文 >></a>
         </p>
       
 
@@ -712,7 +644,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 Jianfei
+    		&copy; 2019 Jianfei
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
