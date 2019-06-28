@@ -149,6 +149,70 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-nginx" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/09/17/nginx/">nginx</a>
+    </h1>
+  
+
+        
+        <a href="/2018/09/17/nginx/" class="archive-article-date">
+  	<time datetime="2018-09-16T17:01:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="安装nginx"><a href="#安装nginx" class="headerlink" title="安装nginx"></a>安装nginx</h2><p><a href="http://nginx.org/en/download.html" target="_blank" rel="noopener">官网</a></p>
+<p>复制 稳定版本（stable version）链接</p>
+<p>进入服务器 wget <a href="http://nginx.org/download/nginx-1.14.0.tar.gz" target="_blank" rel="noopener">http://nginx.org/download/nginx-1.14.0.tar.gz</a></p>
+<p>下载完成后</p>
+<p> tar zxvf nginx*(tab补全)</p>
+<p>进入nginx目录 执行 ./configure </p>
+<p>会生成objs目录</p>
+<p>执行make install</p>
+<p>系统会把nginx 安装到 /usr/local/nginx</p>
+<p>执行文件是/usr/local/nginx/sbin/nginx</p>
+<p>Nginx -t 测试配置文件是否有问题</p>
+<p>nginx -s reload 重启nginx</p>
+<p>Ps -ef | grep nginx 查找进程中是否有启动的nginx</p>
+<p>lsof -i:80 查看占用80端口的进程<br></p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/09/17/nginx/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-todo" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -596,76 +660,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/04/10/使用iTerm2快捷连接SSH/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-vue中给svg组件的dom元素绑定点击事件" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/13/vue中给svg组件的dom元素绑定点击事件/">vue中给svg组件的dom元素绑定点击事件</a>
-    </h1>
-  
-
-        
-        <a href="/2018/01/13/vue中给svg组件的dom元素绑定点击事件/" class="archive-article-date">
-  	<time datetime="2018-01-12T18:26:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="问题描述-在vue中-给svg组件绑定dom元素，因为元素太多，用的jquery或者js原生绑定事件"><a href="#问题描述-在vue中-给svg组件绑定dom元素，因为元素太多，用的jquery或者js原生绑定事件" class="headerlink" title="问题描述:在vue中 给svg组件绑定dom元素，因为元素太多，用的jquery或者js原生绑定事件"></a>问题描述:在vue中 给svg组件绑定dom元素，因为元素太多，用的jquery或者js原生绑定事件</h3><p>测试过程中，复用svg组件分别为 A、B<br>如果用dom元素绑定点击事件，触发A或者B中任意一个点击事件，会同时触发A和B两个相同元素绑定的点击事件</p>
-<p>暂无解决方案！！！难道要给众多的g标签分别添加绑定事件？</p>
-<p>g标签内很多重复的东西，难道要把众多的g标签用v-for循环出来？</p>
-<p><a href="https://stackoverflow.com/questions/25886802/svg-path-convert-into-json" target="_blank" rel="noopener">https://stackoverflow.com/questions/25886802/svg-path-convert-into-json</a></p>
-<p>var d = “M 93.00,444.00\<br>       C 93.00,444.00 114.00,506.00 114.00,506.00\<br>         102.30,512.28 100.00,518.71 100.00,531.00\<br>         100.00,531.00 86.00,534.00 86.00,534.00\<br>         86.00,534.00 68.95,485.00 68.95,485.00\<br>         68.95,485.00 58.00,452.00 58.00,452.00\<br>         58.00,452.00 93.00,444.00 93.00,444.00 Z\<br>       M 75.00,458.00\<br>       C 75.00,458.00 79.00,458.00 79.00,458.00\<br>         78.99,466.29 79.26,463.93 76.00,471.00\<br>         76.00,471.00 86.00,471.00 86.00,471.00\<br>         82.12,462.60 83.00,464.37 83.00,455.00\<br>         83.00,455.00 75.00,458.00 75.00,458.00 Z”</p>
-<p>d = d.replace(/\s{2,}/g, ‘ ‘); // Remove multiple spaces<br>d = d.replace(/([a-zA-Z])\s[0-9]/g, ‘$1,’); // Add letters to coords group<br>d = d.split(“ “); // Split on space</p>
-<p>var coords = [];</p>
-<p>for (var i = 0; i &lt; d.length; i++) {<br>    var coordString = d[i];<br>    var coordArray = coordString.split(“,”);</p>
-<pre><code>var coord = {
-    x: coordArray[coordArray.length - 2],
-    y: coordArray[coordArray.length - 1]
-};
-
-if (coordArray.length &gt; 2) {
-    coord.path = coordArray[0];
-}
-
-coords.push(coord);
-</code></pre><p>}</p>
-<p>console.log(coords);</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/01/13/vue中给svg组件的dom元素绑定点击事件/">展开全文 >></a>
         </p>
       
 
